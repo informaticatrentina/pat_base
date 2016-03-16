@@ -1,0 +1,18 @@
+
+.nav-section{
+  @extend .col-sm-3;
+}
+
+.content-main{
+  @extend .col-sm-9;
+  &.wide{
+    @extend .col-sm-12;
+  }
+  .full-stack &{
+    @extend .col-sm-6;
+  }
+}
+
+.content-related{
+  @extend .col-sm-3;
+}

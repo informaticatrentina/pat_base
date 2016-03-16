@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<software>
+    <metadata>
+        <name>InfoTN PAT Base</name>
+        <version>1.2</version>
+        <copyright>Copyright (C) 2015 Informatica Trentina SpA</copyright>
+        <license>GNU General Public License v2.0</license>
+    </metadata>
+    
+    <dependencies>
+        <extends>
+            <extension name="openpa" />
+            <extension name="ocbootstrap" />
+        </extends>
+    </dependencies>
+</software>

@@ -1,0 +1,218 @@
+
+// -------- large desktops
+header{
+    .top-banner{
+        height: 300px;
+        position: relative;
+        
+        color: #fff;
+        
+        text-align: center;
+        /*background-image: url(/ptn/header_image);*/
+        background-position: center;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        background-size: cover;
+        -o-background-size: cover;
+        
+        .site-logo{
+            position: absolute;
+            bottom: 5px;
+            width: 50%;
+            
+            z-index: 20;
+            
+            img{
+                width: 100px;
+            }
+        }
+        
+        .site-title{
+            position: absolute; 
+            bottom: 0;
+            width: 100%;
+            margin-left: 0px;
+            margin-right: 0px;
+            
+            background-color: rgba(0, 0, 0, .4);
+            
+            z-index: 10;
+            
+            h1{
+                text-transform: uppercase;
+                font-weight: bold;
+                
+                a{
+                    color: #fff;
+                }
+            }
+        }
+    }
+    
+    .site-user-menu{
+        padding-top: 25px;
+        z-index: 30;
+        
+        ul{
+            background-color: rgba(0,0,0,0.4);
+            padding: 2px;
+            border-radius: 4px;
+            li{
+                a{
+                    color: #fff;
+                    i{
+                        font-size: 2em;
+                    }
+                }
+            }
+        }
+    }
+    
+    .site-menu{
+        @extend .col-md-9;
+        @extend .col-sm-12;
+        
+        .main-site-menu{
+            @extend .relative;
+            @extend .clearfix;
+            @extend .t_xs_align_c;
+            @extend .m_bottom_20;
+
+            z-index: 189;
+            width: auto;
+
+            .sticky {
+              position: fixed;
+              top: 0;
+            }
+
+            ul{
+              @extend .reset_ul;
+            }
+
+            > li {
+              z-index: 101;
+            }
+
+            .main_menu > li > a {
+                text-transform: uppercase;
+                display: block;
+                padding: 5px 2px 5px 8px;
+                text-decoration: none !important;
+                font-size: 1.1em;
+                b{
+                    font-weight: normal !important;
+                    margin-right: 6px;
+                }
+            }
+
+            .main_menu > li:hover > .sub_menu_wrap{
+              -webkit-transform:translateY(0px);
+              -moz-transform:translateY(0px);
+              -o-transform:translateY(0px);
+              -ms-transform:translateY(0px);
+              transform:translateY(0px);
+              opacity:1;
+              visibility: visible;
+            }
+
+            .main_menu > li:hover > a, .main_menu > li.current > a{    
+              color:$brand-primary;
+            }  
+
+            li.menu-item{
+              @extend .relative;
+              @extend .f_xs_none;
+              @extend .m_xs_bottom_5;
+
+              position: relative;
+            }
+        }
+    }
+    
+    .site-search{
+        @extend .col-md-3;
+        
+        #topsearch{
+            display: inline;
+            vertical-align: bottom;
+            input{            
+                font-size: 0.75em;
+                padding: 2px 4px;
+                border-bottom-left-radius: 4px;
+                border-top-left-radius: 4px;
+                position: relative;
+                background: #fff;
+                border: 1px solid #fff;
+                width: 100px;
+                height: 27px;
+            }
+            button{
+                border: 1px solid #fff;
+                font-size: 0.75em;
+                padding: 2px 8px 2px 30px;
+                border-bottom-right-radius: 4px;
+                border-top-right-radius: 4px;
+                margin-left: -5px;
+                font-weight: bold;
+                height: 27px;
+                background: #C3C4C3 url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABcAAAApCAYAAADeWrJ9AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEgAACxIB0t1+/AAAABx0RVh0U29mdHdhcmUAQWRvYmUgRmlyZXdvcmtzIENTNui8sowAAAC3SURBVEiJtc3JDYAwEENRQ1tQPvSRSOkjnJAg6yzOnKw5vL/lnDMAXPcF9u3vOI9zHb4isJcPZqDCmYEmzgp0cUZgiHsDU9wTEOHWgBi3BFS4NqDGNQETLg2YcUnAhc8CbnwUoOC9AA1vBah4GaDj38ASPMSwBg8xIKXEx78wFS9hGt6CKXgPduMj2IXPYDMugU24FFbjGliFa2ExboFFuBWe4h54iHvhLs6AmzgLrnAm/MPZMAA8mcp778o4YHYAAAAASUVORK5CYII=') no-repeat center left;            
+            }
+        }
+    }
+}
+
+.mobile-search2{
+  display: none;
+}
+
+// -------- desktops
+@media only screen and (max-width: 992px){
+    header{
+        .site-search{
+            #topsearch{display: none !important;}
+        }
+    }
+    
+    .mobile-search2 {
+        display: block;  
+        right: -7px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+}
+// -------- small devices
+@media only screen and (max-width: 768px){
+    header{
+        .top-banner-small{
+            height: 100px !important;
+        }
+        .top-banner{
+            .site-logo{
+                position: absolute;
+                bottom: 100px;
+                width: 100%;
+
+                z-index: 20;
+
+                img{
+                    width: 150px;
+                }
+                
+                display: none;
+            }
+        }
+        .site-user-menu{
+            padding-top: 5px;
+            ul{
+                li{
+                    a{
+                        .menu-name{
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

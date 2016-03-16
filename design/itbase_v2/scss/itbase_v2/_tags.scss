@@ -1,0 +1,33 @@
+/*
+    STILE PER LA VISUALIZZAZIONE DEI TAG E DELLE FONTI
+*/
+ul.list-tags li{
+    display: inline-block;
+    list-style: none;
+    
+    a:hover {
+        background-color: $brand-primary;
+        color: #fff;
+    }
+    a {
+        // background-color: $gray-lighter;
+        border-radius: 4px;
+        padding: 4px 6px;
+        margin: 4px 4px 4px 0;
+        font-size: 20px;
+        
+        white-space: nowrap;
+        color: $brand-primary;
+        text-decoration: none;
+        display: inline-block;
+        line-height: 14px;
+        min-height: 14px;
+        border-bottom-width: 1px;
+        border-bottom-style: solid;
+        border-bottom-color: $brand-primary;
+        text-align: center;
+        
+        text-transform: uppercase;
+    }
+}
+
