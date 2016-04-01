@@ -11,11 +11,14 @@
             {$node.name|wash} 
         </a>
         <div class="pull-right">
+            
             {include uri='design:parts/toolbar/node_toolbar.tpl' current_node=$node}
+            
         </div>
     </h3>
     {if $node.data_map.description.content.is_empty|not}
 	{attribute_view_gui attribute=$node.data_map.description}
-    {/if}	 
+    {/if}
+     
   </div>
 </div>

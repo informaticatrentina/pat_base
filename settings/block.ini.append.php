@@ -346,7 +346,7 @@ ViewName[lista_accordion_manual]=Pannelli (TODO)
 ViewName[lista_carousel]=Banner (carousel)
 ViewName[lista_box2]=Box a 3 colonne (3 oggetti) (TODO)
 ViewName[lista_box4]=Box ultimi figli (3 oggetti) (TODO)
-ViewName[lista_tab]=Schede (tab) (TODO)
+ViewName[lista_tab]=Schede (tab)
 
 [GMapItems]
 Name=Google Map Items

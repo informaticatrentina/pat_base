@@ -9,7 +9,13 @@
                     {else}
                         {include uri=concat( 'design:dashboard/', $block.identifier, '.tpl' )}
                     {/if}
+                </div> 
+               {* Scommentare per avere la gesrione dei colori del sito
+                <div class="card-material">
+                  
+                   {include uri=concat( 'design:dashboard/css_color.tpl' )}
                 </div>
+                *}
             </div>
             <div class="col-sm-6">
                 <div class="card-material">

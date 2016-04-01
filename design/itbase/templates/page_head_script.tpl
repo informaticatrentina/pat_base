@@ -8,6 +8,8 @@
 
 <script type="text/javascript" src={"javascript/openpa_flat.js"|ezdesign()} ></script>
 <script type="text/javascript" src={"javascript/waypoints.min.js"|ezdesign()} ></script>
+<script type="text/javascript" src={"javascript/colorpicker.js"|ezdesign()} ></script>
+<script type="text/javascript" src={"javascript/layout.js"|ezdesign()} ></script>
 
 <!--[if lt IE 9]>
 <script type="text/javascript" src={"javascript/respond.js"|ezdesign()} ></script>

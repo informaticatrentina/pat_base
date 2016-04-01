@@ -21,9 +21,16 @@ $ViewList['force_playlist_import'] = array(
     'unordered_params' => array()
 );
 
+
+$ViewList['forceSiteColor'] = array( 
+    'script' => 'force_Site_Color.php',
+    'params' => array( 'SiteColor' ),
+    'unordered_params' => array()
+); 
+
+
+
 $FunctionList = array();
 $FunctionList['newsletter'] = array();
 $FunctionList['header_image'] = array();
- 
-
-
+$FunctionList['forceSiteColor'] = array();

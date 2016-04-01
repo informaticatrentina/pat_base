@@ -16,7 +16,7 @@
 {if and( $root_node, $items )}
     {if $root_node}
 
-        {ezscript_require( array( 'ezjsc::jquery', 'plugins/owl-carousel/owl.carousel.min.js', "plugins/blueimp/jquery.blueimp-gallery.min.js" ) )}
+        {ezscript_require( array( 'ezjsc::jquery', 'plugins/owl-carousel/owl.carousel.js', "plugins/blueimp/jquery.blueimp-gallery.min.js" ) )}
         {ezcss_require( array( 'plugins/owl-carousel/owl.carousel.css', 'plugins/owl-carousel/owl.theme.css', "plugins/blueimp/blueimp-gallery.css" ) )}
 
     <div id="carousel_{$css_id}" class="owl-carousel">
@@ -40,9 +40,6 @@
             {/if}
         {/foreach}
     </div>
-    {if gt($items_per_row,1)}
-        {set $auto_height = ''}
-    {/if} 
     <script type="text/javascript">
         $(document).ready(function() {ldelim}
             $("#carousel_{$css_id}").owlCarousel({ldelim}
@@ -60,7 +57,6 @@
                 {rdelim});
             {rdelim});
     </script>
-
     {/if}
 {/if}
 

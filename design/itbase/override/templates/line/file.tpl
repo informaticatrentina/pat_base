@@ -24,7 +24,9 @@
         {else}
             <i class="fa fa-file"></i>
         {/if}
-        
+         <div class="pull-right">
+            {include uri='design:parts/toolbar/node_toolbar.tpl' current_node=$node}
+         </div>
         <a href={$file_url|ezurl( 'no' )}>{$node.name|wash}</a>
         
         {undef $file
