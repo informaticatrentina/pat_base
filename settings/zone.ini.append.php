@@ -8,16 +8,13 @@ AllowedTypes[]=2ZonesLayout1
 AllowedTypes[]=2ZonesLayout2
 AllowedTypes[]=3ZonesLayout1
 AllowedTypes[]=3ZonesLayout2
-AllowedTypes[]=4ZonesLayout1
-
-#Default OpenPA
 AllowedTypes[]=3ZonesLayout3
+AllowedTypes[]=4ZonesLayout1
 AllowedTypes[]=4ZonesLayout2
+AllowedTypes[]=4ZonesLayout3
 AllowedTypes[]=5ZonesLayout1
 AllowedTypes[]=1ZonesLayoutFolder
-AllowedTypes[]=0ZonesLayoutFolder
 
-AllowedTypes[]=4ZonesLayout3
 
 [GlobalZoneLayout]
 ZoneTypeName=Layout globale
@@ -217,18 +214,6 @@ ZoneName[right]=Colonna destra
 ZoneThumbnail=duecolonnefolder.gif
 Template=duecolonnefolder.tpl
 AvailableForClasses[]
-AvailableForClasses[]=folder
-AvailableForClasses[]=pagina_sito
-
-[0ZonesLayoutFolder]
-ZoneTypeName=Nessuna colonna nel Folder
-Zones[]
-Zones[]=nessuna
-ZoneName[nessuna]=Gestione automatica dei contenuti
-ZoneThumbnail=nessuna.gif
-Template=emptyfolder.tpl
-AvailableForClasses[]
-AvailableForClasses[]=frontpage
 AvailableForClasses[]=folder
 AvailableForClasses[]=pagina_sito
 
