@@ -30,7 +30,7 @@
           {def $children_count = fetch( openpa, 'list_count', hash( 'parent_node_id', $node.node_id ) )
                $children       = fetch( openpa, 'list', hash( 'parent_node_id', $node.node_id
                                                             , 'sort_by', $node.sort_array
-                                                            , 'limit', 5) ) }
+                                                            , 'limit', $childs_limit) ) }
                                                                
                                                                
             {if $children_count}
@@ -39,11 +39,13 @@
                 {/foreach}
             {/if}
             <br/>
-            <div class='text-right' style="margin-top: 5px;">
-                <a class="btn btn-sm btn-primary" href="{$openpa.content_link.full_link}" title="{$node.name|wash()}">
-                    Visualizza tutti...
-                </a>
-            </div>
+            {if and(is_set($childs_limit), $childs_limit|ne(''))}
+                <div class='text-right' style="margin-top: 5px;">
+                    <a class="btn btn-sm btn-primary" href="{$openpa.content_link.full_link}" title="{$node.name|wash()}">
+                        Visualizza tutti...
+                    </a>
+                </div>
+            {/if}
       {/if}
       
       {*

@@ -335,6 +335,8 @@ Name=Lista di oggetti (assegnati singolarmente) - MAX 5
 NumberOfValidItems=5
 NumberOfArchivedItems=0
 ManualAddingOfItems=enabled
+CustomAttributes[]=limit
+CustomAttributeNames[limit]=Limite oggetti da visualizzare (Solo per Schede)
 ViewList[]
 ViewList[]=lista_accordion_manual
 ViewList[]=lista_carousel

@@ -1,6 +1,7 @@
-{def $valid_nodes = $block.valid_nodes}
+{def $valid_nodes = $block.valid_nodes
+     $custom_attributes = $block.custom_attributes}
 {if $valid_nodes|count()|gt(0)}
-
+    
 <div class="widget_tabs {$block.view}">
     {if $block.name}
         <h2 class="block-title">{$block.name}</h2>
@@ -19,7 +20,11 @@
     <div class="tab-content">
         {foreach $valid_nodes as $index => $child}
         <div class="tab-pane{if $index|eq(0)} active{/if}" id="{$block.id}-{$child.name|slugize()}">
-            {node_view_gui content_node=$child view=panel show_childs='yes' show_abstract='no'}
+            {node_view_gui content_node=$child 
+                           view=panel 
+                           show_childs='yes' 
+                           show_abstract='no' 
+                           childs_limit=$custom_attributes.limit}
         </div>
         {/foreach}
     </div>

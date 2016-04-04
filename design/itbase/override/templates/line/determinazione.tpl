@@ -12,9 +12,9 @@
           </a>
     </h3>
 
-	{if $node.data_map.intro.content.is_empty|not}
+	{*if $node.data_map.intro.content.is_empty|not}
 	 {attribute_view_gui attribute=$node.data_map.intro}
-	{/if}
+	{/if*}
 
   </div>
 </div>
