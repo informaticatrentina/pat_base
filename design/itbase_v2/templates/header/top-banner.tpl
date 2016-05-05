@@ -13,10 +13,12 @@
                 <img src={$root_node|attribute('logo').content.original.url|ezroot()} alt="{$root_node.name}" />
             {/if}
         </a>
+        {*
         <div>
             PROVINCIA AUTONOMA<br/>
             DI TRENTO
         </div>
+        *}
     </div>
     <div class="site-title row">
         <div class="col-sm-offset-2 col-sm-10">

@@ -21,3 +21,4 @@
     <p>{$node|abstract()|oc_shorten(200)}</p>
 </div>
 </div>
+

@@ -11,18 +11,16 @@ footer{
     .footer-logo{
         position: relative;
         text-align: center;
-        background-image: url(logo-provincia-white.png);
-        background-position: center;
-        -webkit-background-size: cover;
-        -moz-background-size: cover;
-        background-size: cover;
-        -o-background-size: cover;
         width: 100px;
         height: 160px;
         display:inline-block;
         vertical-align: top;
         *display:inline; /* ie7 fix */
         float:none;
+        
+        img{
+            width: 100px;
+        }
     }
 
     .footer-links{

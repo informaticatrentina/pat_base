@@ -13,7 +13,7 @@
 
 {set $items_per_row = 1}
  
-{include uri='design:atoms/carousel.tpl'
+{include uri='design:atoms/carousel_pat.tpl'
          css_id=$block.id
          items=$openpa.content
          root_node=$openpa.root_node

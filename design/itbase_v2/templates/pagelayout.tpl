@@ -40,7 +40,12 @@
     {include uri='design:page_header.tpl'}
 {/cache-block}
 {cache-block keys=array( $module_result.uri, $current_user.contentobject_id, $extra_cache_key )}
+    
+    {if is_unset($pagedata)} 
+        {def $pagedata = openpapagedata()}
+    {/if}
 
+    
     {include uri='design:nav/nav-main.tpl'}
 
     {if and( $pagedata.website_toolbar, $pagedata.is_edit|not)}

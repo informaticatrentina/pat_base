@@ -50,12 +50,20 @@
       <input type="hidden" name="RedirectURI" value="{$User:redirect_uri|wash}" />
       
     </form>
-    <div class='text-center'>
-      <hr class='hr-normal'>
-      <a href={'/user/forgotpassword'|ezurl}>{'Forgot your password?'|i18n( 'design/ocbootstrap/user/login' )}</a>
-    </div>
+      <div class="text-center">
+          <br/>
+            <a href={'/user/forgotpassword'|ezurl}>
+                <i class="fa fa-key"></i>
+                {'Forgot your password?'|i18n( 'design/ocbootstrap/user/login' )}
+            </a>
+          <br/>
+            <a href={'/user/register'|ezurl}>
+                <i class="fa fa-user"></i>
+                {'New user? Click here to register'|i18n( 'design/pat_base/user' )}
+            </a>
+      </div>
+      
   </div>
-  
   <div class='col-sm-4 col-sm-offset-2'>
     {* autenticazione federata *}
     <h3 class='text-center title'>Utente sistema federato</h3>

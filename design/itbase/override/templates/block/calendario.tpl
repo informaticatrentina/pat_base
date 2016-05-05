@@ -38,6 +38,8 @@
                     )} 
                 {if $can_edit}
                 <a href={$node.url_alias|ezurl}>
+                {else}
+                <a href={$folder_node.url_alias|ezurl}>
                 {/if}
                     <div style="padding-bottom: 10px;" class="row">
                         <div class="col-xs-3 col-sm-3">
@@ -56,13 +58,13 @@
                         </div>
                     </div>
                     {set $_index = $_index|sum(1)}
-                {if $can_edit}
                 </a>
-                {/if}
             {/if}
         {/foreach}
         
-        {undef $folder_node, $search, $_index}
+        {undef $folder_node 
+               $search
+               $_index}
     {/if}
     
 </div>

@@ -39,6 +39,11 @@
 {/cache-block}
 {cache-block keys=array( $module_result.uri, $user_hash, $extra_cache_key )}
 
+    {if is_unset($pagedata)} 
+        {def $pagedata = openpapagedata()}
+    {/if}
+
+    
     {include uri='design:nav/nav-main.tpl'}
 
     {if and( $pagedata.website_toolbar, $pagedata.is_edit|not)}

@@ -1,0 +1,35 @@
+// ..:: MENU LATERALE ::.. //
+
+.nav-section{
+    background-color: $navbar-default-bg;
+    padding: 0px;
+    
+    .active > a{
+        background-color: $navbar-default-link-active-bg !important;
+    }
+    
+    li{
+        a{
+            color: $navbar-default-link-color;
+            background-color: $navbar-default-bg !important;
+            border-bottom: 1px solid $navbar-default-border !important;
+        }
+        a:hover{
+            color: $navbar-default-link-hover-color;
+            background-color: $navbar-default-link-hover-bg !important;
+        }
+        
+        .activate-submenu{
+            position: absolute;
+            right: 10px;
+        }
+    }
+    
+    li:not(.active){
+        ul{
+            display: none;
+        }
+    }
+    
+    
+}

@@ -33,8 +33,8 @@
         <div class="row">
             <div class="col-xs-8">
                 <p style="text-transform: uppercase;">
-                    {if $node|has_attribute( 'argomento' )}
-                        {attribute_view_gui attribute=$node|attribute( 'argomento' )}
+                    {if $node|has_attribute( 'tematica' )}
+                        {attribute_view_gui attribute=$node|attribute( 'tematica' )}
                     {/if}
                 </p>
             </div>

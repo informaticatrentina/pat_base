@@ -7,8 +7,7 @@
 														'sort_by', $node.sort_array,
 														 'class_filter_type', 'include',
 														 'class_filter_array', $sub_menu_class_filter ) )
-   $node_name = $node.name|wash()
-}
+   $node_name = $node.name|wash()}
 
 {if $key|eq(0)}
   {set $node_class = $node_class|append("firstli")}
@@ -22,7 +21,7 @@
 {if $node.node_id|eq( $current_node_id )}
   {set $node_class = $node_class|append("active")}
 {elseif $current_path|contains( $node.node_id )}
-  {set $node_class = $node_class|append("current")}
+  {set $node_class = $node_class|append("active")}
 {/if}
 {if gt($sub_menu_items|count(),0)}
   {set $node_class = $node_class|append("dropdown")}

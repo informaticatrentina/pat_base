@@ -16,7 +16,6 @@
 
   <div class="media{if $node|has_attribute('immagini')} has-image{/if}">    
     <div class="caption">
-
         <div class="row">
             <div class="col-xs-10">
                 <h4 class="fw_medium color_dark">

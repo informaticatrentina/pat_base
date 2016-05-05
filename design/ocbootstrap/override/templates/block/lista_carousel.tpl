@@ -12,7 +12,7 @@
 {/if}
     <div class="{if and( $show_title, $block.name|ne('') )}widget_content {/if}carousel-both-control card-material">
         {include name="carousel"
-		  uri='design:atoms/carousel.tpl'
+		  uri='design:atoms/carousel_pat.tpl'
 		  items=$openpa.content
 		  css_id=$block.id
 		  root_node=$openpa.root_node

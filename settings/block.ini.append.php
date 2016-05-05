@@ -4,7 +4,7 @@
 AllowedTypes[]
 AllowedTypes[]=Banner
 AllowedTypes[]=Calendario
-AllowedTypes[]=Campaign
+#AllowedTypes[]=Campaign
 AllowedTypes[]=Carousel
 AllowedTypes[]=DoveSiamo
 AllowedTypes[]=FeedbackForm
@@ -241,6 +241,14 @@ Name=Solo Testo (assegnare una cartella)
 NumberOfValidItems=1
 NumberOfArchivedItems=0
 CustomAttributes[]=node_id
+CustomAttributes[]=title_size
+CustomAttributes[]=select_true_false
+CustomAttributeNames[node_id]=Cartella
+CustomAttributeNames[title_size]=Dimensione Titolo (1,2,3,4)
+CustomAttributeNames[select_true_false]=Mostra pulsante "Visualizza titolo del blocco "
+CustomAttributeTypes[select_true_false]=select_true_false
+CustomAttributeTypes[title_size]=title_size
+
 UseBrowseMode[node_id]=true
 ManualAddingOfItems=disabled
 ViewList[]
@@ -308,6 +316,8 @@ CustomAttributes[]=includi_classi
 CustomAttributes[]=escludi_classi
 CustomAttributes[]=ordinamento
 CustomAttributes[]=columns
+CustomAttributes[]=state_id
+CustomAttributes[]=show_all_btn
 CustomAttributeNames[]
 CustomAttributeNames[livello_profondita]=Livello di profondità nell'alberatura
 CustomAttributeNames[limite]=Numero di elementi
@@ -315,6 +325,9 @@ CustomAttributeNames[includi_classi]=Tipologie di contenuto da includere
 CustomAttributeNames[escludi_classi]=Tipologie di contenuto da escludere (alternativo rispetto al precedente)
 CustomAttributeNames[ordinamento]=Ordina per
 CustomAttributeNames[columns]=Numero di Colonne
+CustomAttributeNames[state_id]=Stato
+CustomAttributeNames[show_all_btn]=Mostra pulsante "Visualizza Tutti..." (SI/NO)
+CustomAttributeTypes[state_id]=state_select
 ManualAddingOfItems=disabled
 ViewList[]
 ViewList[]=lista_num

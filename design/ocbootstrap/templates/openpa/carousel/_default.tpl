@@ -8,12 +8,14 @@
 {/if}
 
 
-<div class="carousel-caption">
-    <h3>	
-      <a href="{$openpa.content_link.full_link}">{$node.name|wash()}</a>	
-    </h3>
-    {if $node|abstract()|ne('') }
-        <p>{$node|abstract()|oc_shorten(400)}</p>
-    {/if}
-</div>
+{if or(is_set($hide_caption)|not, $hide_caption|not)}
+    <div class="carousel-caption">
+        <h3>	
+          <a href="{$openpa.content_link.full_link}">{$node.name|wash()}</a>	
+        </h3>
+        {if $node|abstract()|ne('') }
+            <p>{$node|abstract()|oc_shorten(400)}</p>
+        {/if}
+    </div>
+{/if}
 </div>

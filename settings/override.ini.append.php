@@ -4,6 +4,13 @@
 #           BLOCKS             #
 ################################
 
+[block_feedback_form]
+Source=block/view/view.tpl
+MatchFile=block/feedback_form.tpl
+Subdir=templates
+Match[type]=FeedbackForm
+Match[view]=default
+
 [block_carousel]
 Source=block/view/view.tpl
 MatchFile=block/carousel.tpl
@@ -221,14 +228,6 @@ Subdir=templates
 Match[type]=Lista3
 Match[view]=lista_carousel
 
-
-[full_associzione]
-Source=node/view/full.tpl
-MatchFile=full/associazione.tpl
-Subdir=templates
-Match[class_identifier]=associazione
-
- 
 [full_event]
 Source=node/view/full.tpl
 MatchFile=full/event.tpl

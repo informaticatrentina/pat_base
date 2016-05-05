@@ -1,0 +1,53 @@
+// -------- large desktops
+
+#header{
+    background: #eee;
+    
+    .top-banner-v3{
+        @extend .top-banner;
+        
+        height: 350px !important;
+        
+        .top-carousel{
+            position: absolute;
+            top: 0;
+            left: 0;
+            
+            .owl-item{
+                padding: 0;
+                .item{
+                    min-height: 350px !important;
+                    background-position: center;
+                    background-repeat: no-repeat;
+                }
+            }
+            
+            .owl-controls{
+                .owl-prev{
+                    position: absolute;
+                    left: 20px;
+                    top: 125px;
+                    
+                    background: none !important;
+                }
+                .owl-next{
+                    position: absolute;
+                    right: 20px;
+                    top: 125px;
+                    
+                    background: none !important;
+                }
+            }
+        }
+        
+        .site-user-menu{
+            position: absolute;
+            right: 10%;
+        }
+    }
+}
+
+// -------- desktops
+
+
+// -------- small devices

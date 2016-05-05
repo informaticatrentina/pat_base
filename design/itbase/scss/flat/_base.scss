@@ -326,10 +326,12 @@ mark{
 :-ms-input-placeholder {
   color:$brand-secondary;
 }
+/*
 ::-webkit-scrollbar{
   width:10px;
   background:#323a45;
 }
+*/
 ::-webkit-scrollbar-thumb{
   -webkit-border-radius:4px;
   border-radius:4px;
