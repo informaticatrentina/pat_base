@@ -1,0 +1,53 @@
+.content-main{
+    .content-line{
+          border-bottom: solid 4px $text-color;
+          margin: 20px 0px 20px 10px;
+     }
+     .content-main{
+         .content-title{
+            margin-top:50px;
+         }
+     }
+    .content-related{
+
+        .related-panel{
+            padding: 0px 20px 20px 20px;
+            background-color: #dedede;
+            color: #808080;
+            overflow:hidden;
+            margin-top: 20px;
+
+            .related-icon{
+                margin-top: -20px;
+                margin-left: 10px;
+                color: #dedede;
+                .fa-inverse{
+                    color: $body-bg;
+                }
+            }
+        }
+    }
+    
+    
+    .searchform{
+        padding: 0px 20px 20px 20px;
+        background-color: #dedede;
+        color: #808080;
+        overflow:hidden;
+        margin-top: 20px;
+
+        .related-icon{
+            margin-top: -20px;
+            margin-left: 41px;
+            color: #dedede;
+            .fa-inverse{
+                color: $body-bg;
+            }
+        }
+        .searchform-content{
+            color: $text-color;
+        }
+    }
+}
+
+

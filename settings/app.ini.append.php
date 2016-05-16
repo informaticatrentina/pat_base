@@ -1,7 +1,7 @@
 <?php /* #?ini charset="utf-8"?
 
-#[MenuContentSettings]
-#LeftIdentifierList[]=comunicato
+[MenuContentSettings]
+LeftIdentifierList[]=pagina_approfondimento
 
 
 */ ?>

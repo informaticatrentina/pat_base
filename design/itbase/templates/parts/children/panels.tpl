@@ -17,7 +17,7 @@
   'type', 'exclude',
   'fetch_type', 'list',
   'parent_node', $node,
-  'col-width', 6,
+  'col_width', 6,
   'modulo', 2
 ))}
 
@@ -36,7 +36,7 @@
   <div class="content-view-children">
     <div class="row panels-container">
     {foreach $children as $child }
-      <div class="col-md-{$col-width}">
+      <div class="col-md-{$col_width}">
         {node_view_gui content_node=$child view=panel image_class=widemedium}
       </div>
       {delimiter modulo=$modulo}</div><div class="row panels-container">{/delimiter}

@@ -228,19 +228,6 @@ Subdir=templates
 Match[type]=Lista3
 Match[view]=lista_carousel
 
-[full_event]
-Source=node/view/full.tpl
-MatchFile=full/event.tpl
-Subdir=templates
-Match[class_identifier]=event 
-
-[event_simple]
-Source=node/view/full.tpl
-MatchFile=full/event.tpl
-Subdir=templates
-Match[class_identifier]=event_simple
-
-
 ################################
 ################################ OCBOOSTRAP LINE
 ################################

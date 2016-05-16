@@ -1,12 +1,12 @@
 // -------- large desktops
 
 #header{
-    background: #eee;
+    background: $body-bg;
     
     .top-banner-v3{
         @extend .top-banner;
         
-        height: 350px !important;
+        height: 450px !important;
         
         .top-carousel{
             position: absolute;
@@ -16,7 +16,7 @@
             .owl-item{
                 padding: 0;
                 .item{
-                    min-height: 350px !important;
+                    min-height: 450px !important;
                     background-position: center;
                     background-repeat: no-repeat;
                 }
@@ -26,14 +26,14 @@
                 .owl-prev{
                     position: absolute;
                     left: 20px;
-                    top: 125px;
+                    top: 170px;
                     
                     background: none !important;
                 }
                 .owl-next{
                     position: absolute;
                     right: 20px;
-                    top: 125px;
+                    top: 170px;
                     
                     background: none !important;
                 }
@@ -43,6 +43,27 @@
         .site-user-menu{
             position: absolute;
             right: 10%;
+            ul{
+                border-radius: 0px;
+            }
+        }
+    }
+    
+    .site-title{
+        position: absolute;
+        width: 100%;
+        margin-top: 376px;
+        margin-left: 0px;
+        margin-right: 0px;
+        div{
+            // background-color: rgba(0,0,0,0.4);
+            h1{
+                font-weight: 900;
+                font-size: 40px;
+                a{
+                    text-decoration: none;
+                }
+            }
         }
     }
 }

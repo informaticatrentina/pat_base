@@ -57,32 +57,35 @@ class ChildsPropagationStateType extends eZWorkflowEventType
             }
             else if( $parameters['trigger_name'] == 'post_publish' )
             {
-                $objectId = $parameters['object_id'];
-                $object = eZContentObject::fetch( $objectId );
-                $objectStateIDArray = $object->stateIDArray();
-                
-                $fetch_parameters = array(
-                                            'node_id' => $object->mainParentNodeID()
-                                         );
-                $parent = eZFunctionHandler::execute('content', 'node', $fetch_parameters);
-                
-                $stateGroups = eZINI::instance( 'patbase.ini' )->variable( 'ChildsPropagationState', 'StateGroupID' );
-                
-                $parentStateIDArray = $parent->object()->stateIDArray();
-                
-                $stateChanged = FALSE;
-                foreach( $stateGroups as $stateGroup ){
-                    if( $objectStateIDArray[ $stateGroup ] !== $parentStateIDArray[ $stateGroup ] ){
-                        $stateChanged = TRUE;
+                if( $parameters['version'] === '1' ) // SOLO CREAZIONE
+                {
+                    $objectId = $parameters['object_id'];
+                    $object = eZContentObject::fetch( $objectId );
+                    $objectStateIDArray = $object->stateIDArray();
 
-                        $objectStateIDArray[ $stateGroup ] = $parentStateIDArray[ $stateGroup ];
+                    $fetch_parameters = array(
+                                                'node_id' => $object->mainParentNodeID()
+                                             );
+                    $parent = eZFunctionHandler::execute('content', 'node', $fetch_parameters);
+
+                    $stateGroups = eZINI::instance( 'patbase.ini' )->variable( 'ChildsPropagationState', 'StateGroupID' );
+
+                    $parentStateIDArray = $parent->object()->stateIDArray();
+
+                    $stateChanged = FALSE;
+                    foreach( $stateGroups as $stateGroup ){
+                        if( $objectStateIDArray[ $stateGroup ] !== $parentStateIDArray[ $stateGroup ] ){
+                            $stateChanged = TRUE;
+
+                            $objectStateIDArray[ $stateGroup ] = $parentStateIDArray[ $stateGroup ];
+                        }
                     }
-                }
-                
-                if( $stateChanged ){
-                    eZOperationHandler::execute( 'content', 'updateobjectstate', 
-                                                  array( 'object_id' => $objectId, 
-                                                         'state_id_list' => $objectStateIDArray ) );
+
+                    if( $stateChanged ){
+                        eZOperationHandler::execute( 'content', 'updateobjectstate', 
+                                                      array( 'object_id' => $objectId, 
+                                                             'state_id_list' => $objectStateIDArray ) );
+                    }
                 }
             }
             //

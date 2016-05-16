@@ -5,6 +5,7 @@
 {if $load_css_file_list}
   {ezcss_load( array( 'app.css',
                       'app_2.css',
+                      'app_3.css',
                       'debug.css',
                       'websitetoolbar.css',
                       ezini( 'StylesheetSettings', 'CSSFileList', 'design.ini' ),
@@ -12,6 +13,7 @@
 {else}
   {ezcss_load( array( 'app.css',
                       'app_2.css',
+                      'app_3.css',
                       'debug.css',
                       'websitetoolbar.css' ), 'all', 'text/css', 'stylesheet', '', cond( $ie9|eq(1), 0, 3 ) )}
 {/if}

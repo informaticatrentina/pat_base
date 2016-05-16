@@ -9,6 +9,9 @@
     {/if}
 {/if}    
     {foreach $attribute.content.tags as $tag}
-        <a style="text-transform: uppercase;" href={concat( '/tags/view/', $tag.url )|ezurl}>{$tag.keyword|wash}</a>{delimiter} - {/delimiter}
+        <a style="text-transform: uppercase;" href={concat( '/tags/view/', $tag.url )|ezurl}>
+            <i class="fa fa-tag"></i>
+            {$tag.keyword|wash}
+        </a>{delimiter} - {/delimiter}
     {/foreach}
 {/if}

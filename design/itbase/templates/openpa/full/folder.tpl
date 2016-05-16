@@ -35,10 +35,10 @@
       </div>
     {/if}
     
-    {if $node|has_attribute( 'children_view' )}
+    {if $node|has_attribute( 'show_children' )}
       {include uri=concat('design:parts/children/', $node.data_map.children_view.class_content.options[$node.data_map.children_view.value[0]].name|downcase(), '.tpl')}
-    {else}
-      {include uri='design:parts/children.tpl' view='line'}
+    {*else}
+      {include uri='design:parts/children.tpl' view='line'*}
     {/if}
 
   </div>

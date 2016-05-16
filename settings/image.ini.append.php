@@ -1,7 +1,6 @@
 <?php /* #?ini charset="utf-8"?
 
 [AliasSettings]
-AliasList[]
 AliasList[]=carousel_tall
 AliasList[]=carousel_top
 
@@ -13,6 +12,6 @@ Filters[]=centerimg=1770; 520
 [carousel_top]
 Reference=original
 Filters[]=geometry/scalewidthdownonly=1920
-Filters[]=centerimg=1920; 350
+Filters[]=centerimg=1920; 450
 
 */ ?>

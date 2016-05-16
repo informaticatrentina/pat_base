@@ -1,0 +1,198 @@
+/* =flat
+-------------------------------------------------
+*/
+.card-material{
+    background-color: #fff;
+    //padding: 10px;
+    margin-bottom: 30px;
+    
+    header{
+        border-bottom: solid 1px #aaa;
+        margin-bottom: 20px;
+        
+        h1{
+            text-transform: uppercase;
+            color: #333;
+            font-weight: 300;
+            margin: 0 0 0px;
+
+            a{
+                color: #333;
+                text-decoration: none;
+            }
+        }
+        h2{
+            text-transform: uppercase;
+            color: #333;
+            font-weight: 300;
+            margin: 0 0 0px;
+
+            a{
+                color: #333;
+                text-decoration: none;
+            }
+        }
+        h3{
+            text-transform: uppercase;
+            color: #333;
+            font-weight: 300;
+            margin: 0 0 0px;
+
+            a{
+                color: #333;
+                text-decoration: none;
+            }
+        }
+        h4{
+            text-transform: uppercase;
+            color: #333;
+            font-weight: 300;
+            margin: 0 0 0px;
+
+            a{
+                color: #333;
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+
+/* =solo testo
+-------------------------------------------------
+*/
+.solo_testo{
+    padding: 20px;
+    
+}
+
+/* =widget
+-------------------------------------------------
+*/
+.widget_title{
+    background-color: #fff;
+    h1{
+        text-transform: uppercase;
+        color: #333;
+        font-weight: 300;
+        margin: 0 0 0px;
+
+        a{
+            color: #333;
+            text-decoration: none;
+        }
+    }
+}
+.home_widget{
+    padding: 20px;
+}
+
+/* =carousel
+-------------------------------------------------
+*/
+.lista_carousel{
+    .owl-carousel{
+        .owl-controls{
+            .owl-prev{
+                position: absolute;
+                left: 20px;
+                top: 125px;
+
+                background: none !important;
+            }
+            .owl-next{
+                position: absolute;
+                right: 20px;
+                top: 125px;
+
+                background: none !important;
+            }
+        }
+    }
+    
+    .carousel-caption{
+        padding:0px !important;
+    }
+}
+
+.owl-buttons{
+    .owl-prev{
+        border-radius: 0px !important;
+    }
+    .owl-next{
+        border-radius: 0px !important;
+    }
+}
+
+/* =breadcrumb
+-------------------------------------------------
+*/
+.breadcrumb{
+    border-top: 6px solid $text-color;
+    border-radius: 0px !important;
+    background-color: inherit;
+}
+
+
+/* =home menu
+-------------------------------------------------
+*/
+.home_menu{
+    padding: 0px !important;
+    ul{
+        li{
+            a{
+                text-transform: uppercase;
+                text-align: left;
+                color: $navbar-default-color;
+                display: block;
+                padding-top: 10px;
+                padding-bottom: 10px;
+                padding-left: 18px;
+                padding-right:18px;
+                border-bottom: 1px solid $navbar-default-border;
+                background-color: #ddd;
+                
+                
+                &:hover{
+                    color: $navbar-default-link-hover-color;
+                    background-color: $navbar-default-link-hover-bg;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+}
+
+/* =full title
+-------------------------------------------------
+*/
+.childs-container{
+    .content-main{
+        h1{
+            border-bottom: solid 1px #aaa;
+            text-transform: uppercase;
+        }
+    }
+}
+
+/* =carousels
+-------------------------------------------------
+*/
+
+
+.carousel-top-control {
+  &.title-placeholder {
+    padding-top: 42px;
+  }
+  .owl-controls {
+    .owl-buttons {
+      position: absolute;
+      right: 0;
+      top: -52px;
+    }
+  }
+  .caption {
+    padding-right: 10px;
+  }
+}

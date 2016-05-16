@@ -27,8 +27,8 @@
                   , and($item.object.class_identifier|eq('comunicato'), $item.data_map.punto.content|eq(0)))}
                 {if $evidenza}
                     {* Visualizza solo se nel campo Rilevanza è impostato PrimaPagina*}
-                    {if is_set($item.data_map.rilevanza)}
-                        {if $item.data_map.rilevanza.content.0|eq(1)}
+                    {if is_set($item.data_map.in_evidenza)}
+                        {if $item.data_map.in_evidenza.content|eq(1)}
                             <div class="item">
                                 {node_view_gui content_node=$item view=$i_view image_class=$image_class}
                             </div> 

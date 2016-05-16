@@ -1,6 +1,8 @@
+{*
 {if $openpa.content_tools.editor_tools}
     {include uri=$openpa.content_tools.template}
 {/if}
+*}
 
 {def $tree_menu = tree_menu( hash( 'root_node_id', $openpa.control_menu.side_menu.root_node.node_id, 'user_hash', $openpa.control_menu.side_menu.user_hash, 'scope', 'side_menu' ))
      $show_left = and( $openpa.control_menu.show_side_menu, count( $tree_menu.children )|gt(0) )}

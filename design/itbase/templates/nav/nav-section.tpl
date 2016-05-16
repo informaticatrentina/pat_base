@@ -32,12 +32,25 @@
 {literal}
 <script>
     // attiva o disattiva il sottomenu
+    /*
     $('.activate-submenu').click(function( event ) {
         if ($(this).closest('li').children('ul').length) {
             $(this).closest('li').toggleClass('active');
             
-            $(this).toggleClass('fa-caret-left');
+            $(this).toggleClass('fa-caret-right');
             $(this).toggleClass('fa-caret-down');
+            
+            event.preventDefault();
+        }
+    });
+    */
+    
+    $('.activate-submenu-a').click(function( event ) {
+        if ($(this).closest('li').children('ul').length) {
+            $(this).closest('li').toggleClass('active');
+            
+            $(this).children(":first").toggleClass('fa-caret-right');
+            $(this).children(":first").toggleClass('fa-caret-down');
             
             event.preventDefault();
         }

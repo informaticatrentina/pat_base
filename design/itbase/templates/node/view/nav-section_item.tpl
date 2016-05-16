@@ -26,10 +26,14 @@
         </a>
 {else}
     <li {if or(eq($node.node_id, $current_node_id), $current_subitem)}class="active"{/if}>
-        <a href="{$node.url_alias|ezurl('no')}">
+        <a {if $sub_menu_items_count}
+                href="javascript:void(0)" class="activate-submenu-a"
+           {else}
+               href="{$node.url_alias|ezurl('no')}"
+           {/if}>
             {$node_name}
             {if $sub_menu_items_count}
-                {def $fa_caret = "fa-caret-left"}
+                {def $fa_caret = "fa-caret-right"}
                 {if or(eq($node.node_id, $current_node_id), $current_subitem)}
                     {set $fa_caret = "fa-caret-down"}
                 {/if}

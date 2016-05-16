@@ -69,7 +69,6 @@
     {include uri='design:page_footer.tpl'}
 </div>
 
-{* :: INFOTN :: *}
 <button class="animate_ftl" id="go_to_top"><i class="fa fa-angle-up"></i></button>
 
 {include uri='design:page_footer_script.tpl'}

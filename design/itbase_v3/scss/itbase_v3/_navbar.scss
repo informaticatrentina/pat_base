@@ -1,0 +1,15 @@
+// Modifiche alla barra di navigazione secondo le richieste PAT
+
+.navbar-default{
+    margin-bottom: 10px;
+    font-weight: 400;
+}
+
+ .navbar-nav {
+    > li > a {
+        border-left: solid 1px $navbar-default-border;
+    }
+    > li:last-child > a {
+        border-right: solid 1px $navbar-default-border;
+    }
+ }

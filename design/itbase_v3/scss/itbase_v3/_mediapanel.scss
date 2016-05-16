@@ -1,0 +1,49 @@
+
+/* =panels
+-------------------------------------------------
+*/
+.media-panel{
+    margin-bottom: 10px;
+    figure {
+      background-repeat: no-repeat !important;
+      background-size: cover !important;
+      background-position: center center !important;
+      background-color: #ffffff !important;
+      margin: 0;
+      min-height: 200px;
+      @extend .r_corners_top;
+      border-bottom: none !important;
+      border-radius: 0px !important;
+      @extend .shadow;
+    }
+    .media{
+      @extend .widget;
+      background:#fff;
+      padding: 10px;
+      &.has-image {
+        margin-top: 0;
+        border-top-right-radius: 0;
+        border-top-left-radius: 0;
+      }
+      h4{
+        margin-top: 0;
+        a{
+          text-decoration: none;
+        }
+      }
+      .media-line{
+          border-bottom: solid 4px $text-color;
+          margin: 20px 0px 20px 10px;
+      }
+      .abstract{
+        font-size: 0.9em;
+      }
+      p.link{
+        margin-bottom: 0;
+        text-transform: uppercase;
+      }
+      .media-panel-date{
+        color: $gray;
+      }
+    }
+}

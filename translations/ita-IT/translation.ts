@@ -15,6 +15,14 @@
 		<source>Read</source>
 		<translation>Leggi</translation>
 	</message> 
+    <message>
+		<source>View</source>
+		<translation>Guarda</translation>
+	</message> 
+    <message>
+		<source>Open</source>
+		<translation>Apri</translation>
+	</message> 
         <message>
 		<source>Detail</source>
 		<translation>Dettaglio</translation>
