@@ -2,11 +2,56 @@
 
 #header{
     background: $body-bg;
+    height: 326px; // dinamico
     
     .top-banner-v3{
         @extend .top-banner;
         
-        height: 450px !important;
+        // height: 450px !important;
+        
+        .top-bar{
+            position:absolute;
+            top: 0;
+            left: 0;
+            
+            z-index: 10;
+            img{
+                width: 100%; 
+                height: auto;
+            }
+        }
+        
+        .top-bar-small{
+            display: none;
+        }
+        
+        .tob-bar-icons{
+            .site-logo{
+                img{
+                    width: 100%;
+                    height: auto;
+                    margin-top:5px;
+                }
+            }
+            .site-logo-small{
+                display: none;
+            }
+        }
+        
+        .tob-bar-icons{
+            position: absolute;
+            top: 30px;
+            left: 0;
+
+            width: 100%;
+
+            z-index: 20;
+            
+            .social-icon{
+                padding-right: 10px;
+                text-decoration: none;
+            }
+        }
         
         .top-carousel{
             position: absolute;
@@ -16,9 +61,14 @@
             .owl-item{
                 padding: 0;
                 .item{
-                    min-height: 450px !important;
+                    // min-height: 450px;
                     background-position: center;
                     background-repeat: no-repeat;
+                    
+                    img{
+                        width: 100%;
+                        height: auto;
+                    }
                 }
             }
             
@@ -26,16 +76,20 @@
                 .owl-prev{
                     position: absolute;
                     left: 20px;
-                    top: 170px;
+                    top: 92px; // dinamico
                     
                     background: none !important;
+                    
+                    z-index: 20;
                 }
                 .owl-next{
                     position: absolute;
                     right: 20px;
-                    top: 170px;
+                    top: 92px; // dinamico
                     
                     background: none !important;
+                    
+                    z-index: 20;
                 }
             }
         }
@@ -52,7 +106,7 @@
     .site-title{
         position: absolute;
         width: 100%;
-        margin-top: 376px;
+        margin-top: 242px; // dinamico
         margin-left: 0px;
         margin-right: 0px;
         div{
@@ -68,7 +122,83 @@
     }
 }
 
-// -------- desktops
+.small-devices-menu{
+    button{
+        font-size: 1.5em; 
+        border-radius: 0px;
+        background-color: $brand-primary;
+    }
+}
 
+// -------- desktops
+@media only screen and (max-width: 992px){
+    #header{
+        .site-title{
+            div{
+                h1{
+                    padding-top: 10px;
+                    font-size: 30px;
+                }
+            }
+        }
+    }
+}
 
 // -------- small devices
+@media only screen and (max-width: 768px){
+    #header{
+        
+        .top-banner-v3{
+            
+            .top-bar{
+                display: none;
+            }
+
+            .top-bar-small{
+                position:absolute;
+                top: 0;
+                left: 0;
+
+                z-index: 10;
+                
+                display: block;
+                img{
+                    width: 100%; 
+                    height: auto;
+                }
+            }
+            
+            .tob-bar-icons{
+                .site-logo{
+                    display: none;
+                }
+                .site-logo-small{
+                    display: block;
+                    img{
+                        width: 100%;
+                        height: auto;
+                    }
+                }
+            }
+            
+            .top-carousel{
+                .owl-controls{
+                    .owl-prev{
+                        display: none;
+                    }
+                    .owl-next{
+                        display: none;
+                    }
+                }
+            }
+        }
+        .site-title{
+            div{
+                h1{
+                    padding-top: 20px;
+                    font-size: 20px;
+                }
+            }
+        }
+    }
+}

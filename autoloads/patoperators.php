@@ -28,7 +28,13 @@ class PatOperators
                                     'node_id' =>  array( 'type' => 'int',
                                                          'required' => true,
                                                          'default' => '2' )                
-                                    )
+                                    ),
+            'http_header' => array('header' => array('type' => 'string',
+                                                     'required' => true ),
+                                   'status_code' => array('type' => 'int',
+                                                            'required' => false,
+                                                            'default' => 0 )
+                                  )
         );
     }
     
@@ -46,6 +52,24 @@ class PatOperators
                 {
                     $nodeID = $namedParameters['node_id'];
                     $operatorValue = PatOrganigramma::getOrganigrammaTree($nodeID);
+                }
+                break;
+            
+            case 'http_header':
+                {
+                    echo 'ciao';
+                    die();
+                    $header = $namedParameters['header'];
+                    $status_code = $namedParameters['status_code'];
+                    if ( $status_code != 0 )
+                    {
+                        header( $header, true, $status_code );
+                    }
+                    else
+                    {
+                        header( $header );
+                    }
+                    $operatorValue = '';
                 }
                 break;
 

@@ -27,20 +27,22 @@
         
         <div class="row">
             <div class="col-xs-5 media-line">
-                
             </div>
         </div>
-
+        
         <p class="abstract">
             {$node|abstract()|openpa_shorten(200)}
         </p>
-
+        
+        {include uri='design:parts/related-item.tpl'}
+        
+        {* tematica
         <p style="text-transform: uppercase;">
             {if $node|has_attribute( 'tematica' )}
                 {attribute_view_gui attribute=$node|attribute( 'tematica' )}
             {/if}
         </p>
-
+        *}
     </div>
   </div>
 </div>

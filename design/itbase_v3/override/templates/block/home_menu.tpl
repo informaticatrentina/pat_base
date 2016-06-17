@@ -14,13 +14,14 @@
             <li>
                 <a href={$valid_node.url|ezurl()}>
                     <div class="row">
-                        <div class="col-xs-6">
+                        <div class="col-xs-12">
                             {$valid_node.name|wash()}
                         </div>
-                     
+                        {*
                         <div class="col-xs-6 text-right">
                             <i class='fa fa-arrow-circle-o-right fa-2x'></i>
                         </div>
+                        *}
                     </div>
                 </a>
             </li>

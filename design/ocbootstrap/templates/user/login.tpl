@@ -22,7 +22,7 @@
 <div class='row'>
   <div class='col-sm-4 col-sm-offset-1'>    
     <form class="validate-form" method="post" action={"/user/login/"|ezurl} name="loginform">
-      <h3 class='text-center title'>Utente locale</h3>
+      {* <h3 class='text-center title'>Utente locale</h3> *}
       <div class='form-group'>
         <div class='controls with-icon-over-input'>          
           <input type="text" autofocus="" autocomplete="off" name="Login" placeholder="{"Username"|i18n("design/ocbootstrap/user/login",'User name')}" class="form-control" data-rule-required="true" value="{$User:login|wash}">
@@ -64,12 +64,15 @@
       </div>
       
   </div>
+    {*
   <div class='col-sm-4 col-sm-offset-2'>
     {* autenticazione federata *}
+    {*
     <h3 class='text-center title'>Utente sistema federato</h3>
    
     <button type="button" class="btn btn-primary btn-lg center-block" onclick="location.href={'ocfedauth/fedrequest'|ezurl()}">Autenticazione federata</button>
   </div>
+  *}
 </div>
 
 

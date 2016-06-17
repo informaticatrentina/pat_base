@@ -9,3 +9,49 @@
     border-radius: 0px !important;
 }
 
+/* =home
+-------------------------------------------------
+*/
+.top-banner-v3{
+    a.title-home-bianco{
+       color: white;
+    } 
+
+    a.title-home-nero{
+       color: black;
+    } 
+
+    a.title-home-grigioscuro{
+       color:#1a1a1a;
+    } 
+}
+
+/* =banner
+-------------------------------------------------
+*/
+.banner{
+    .edit-pencil{
+        position: absolute;
+        left: 20px;
+        padding-top: 8px;
+        padding-bottom: 8px;
+        padding-left: 10px;
+        padding-right: 10px;
+        margin-top: 10px;
+        //border-radius: 5px;
+        color: white;
+        background-color: rgba(0,0,0,0.8);
+    }
+    
+  .external-url{
+        position: absolute;
+        right: 30px;
+        padding-top: 8px;
+        padding-bottom: 8px;
+        padding-left: 10px;
+        padding-right: 10px;
+        color: black;
+    }  
+  
+}
+

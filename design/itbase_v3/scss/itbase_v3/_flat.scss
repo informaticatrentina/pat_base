@@ -15,6 +15,7 @@
             color: #333;
             font-weight: 300;
             margin: 0 0 0px;
+            font-size: 24px !important;
 
             a{
                 color: #333;
@@ -195,4 +196,69 @@
   .caption {
     padding-right: 10px;
   }
+}
+
+/* =link attributo description
+-------------------------------------------------
+*/
+.content-main{
+    .abstract{
+        a{
+            color: $brand-primary;
+        }
+    }
+    .description{
+        a{
+            color: $brand-primary;
+        }
+    }
+}
+
+.owl-item{
+    .item {
+       img.img-responsive{
+           min-height: inherit !important;
+       }
+    }
+}
+
+
+/* =gallery
+-------------------------------------------------
+*/
+.gallery{
+  &.gallery-strip{
+    .gallery-strip-thumbnail{
+      display: inline-block;
+      margin: 0 4px 4px 0;
+      overflow: hidden;
+      img{
+        display: inline-block;
+      }
+    }
+    .content-related &{
+      img{
+        width: 100px;
+        height: 80px;
+      }
+    }
+  }
+}
+
+// -------- small devices
+@media only screen and (max-width: 768px){
+    
+    /* =widget
+    -------------------------------------------------
+    */
+    .home_widget{
+        padding: 5px;
+    }
+    
+    /* =carousel
+    -------------------------------------------------
+    */
+    .owl-buttons{
+        display: none;
+    }
 }

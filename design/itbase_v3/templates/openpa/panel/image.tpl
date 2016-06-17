@@ -1,0 +1,1 @@
+{include uri='design:openpa/panel/_default.tpl'}

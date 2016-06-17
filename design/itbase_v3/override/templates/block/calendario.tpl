@@ -39,7 +39,8 @@
                 {if $can_edit}
                 <a href={$node.url_alias|ezurl}>
                 {else}
-                <a href={$folder_node.url_alias|ezurl}>
+                {*<a href={$folder_node.url_alias|ezurl}>*}
+                <a href={$node.url_alias|ezurl}>
                 {/if}
                     <div style="padding-bottom: 10px;" class="row">
                         <div class="col-xs-3 col-sm-3">

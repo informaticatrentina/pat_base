@@ -32,6 +32,16 @@
 {include uri='design:page_head_script.tpl'}
 {include uri='design:page_head_analytics_script.tpl'}
 
+<style>
+    {literal}
+    .TestoRosso{
+        color: red !important;
+    }
+    .TestoBlu{
+        color: blue !important;
+    }
+    {/literal}
+</style>
 </head>
 <body>
 

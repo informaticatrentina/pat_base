@@ -29,7 +29,7 @@
         
     {else}
         <h3 class="media-heading">
-            <span class="fa fa-folder-o"></span>
+            <span class="fa fa-file-o"></span>
             <a href={$node.url_alias|ezurl}>{$node.name|wash}</a>
         </h3>
         {if $node.data_map.short_description.content.is_empty|not}

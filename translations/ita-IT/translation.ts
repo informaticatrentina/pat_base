@@ -15,13 +15,17 @@
 		<source>Read</source>
 		<translation>Leggi</translation>
 	</message> 
-    <message>
+        <message>
 		<source>View</source>
 		<translation>Guarda</translation>
 	</message> 
-    <message>
+        <message>
 		<source>Open</source>
 		<translation>Apri</translation>
+	</message> 
+        <message>
+		<source>Close</source>
+		<translation>Chiudi</translation>
 	</message> 
         <message>
 		<source>Detail</source>
@@ -96,6 +100,14 @@
 		<source>Signature</source>
 		<translation>Firma</translation>
 	</message>
+        <message>
+            <source>Register user</source>
+            <translation>Registrazione utente</translation>
+        </message>
+        <message>
+            <source>Required fields</source>
+            <translation>Campi obbligatori</translation>
+        </message>
 </context>
 
 <context>

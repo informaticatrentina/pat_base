@@ -1,5 +1,5 @@
 {set_defaults( hash(
-  'page_limit', 10,
+  'page_limit', 20,
   'view', 'line',
   'delimiter', '',
   'exclude_classes', openpaini( 'ExcludedClassesAsChild', 'FromFolder', array( 'image', 'infobox', 'global_layout' ) ),

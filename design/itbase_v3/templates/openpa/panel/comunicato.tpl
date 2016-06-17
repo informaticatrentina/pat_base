@@ -34,12 +34,8 @@
         <p class="abstract">
             {$node|abstract()|openpa_shorten(200)}
         </p>
-
-        <p style="text-transform: uppercase;">
-            {if $node|has_attribute( 'tematica' )}
-                {attribute_view_gui attribute=$node|attribute( 'tematica' )}
-            {/if}
-        </p>
+        
+        {include uri='design:parts/related-item.tpl'}
 
     </div>
   </div>

@@ -3,6 +3,25 @@
     background-color: #eee;
 }
 
+.gallery{
+  &.gallery-strip{
+    .gallery-strip-thumbnail{
+      display: inline-block;
+      margin: 0 4px 4px 0;
+      overflow: hidden;
+      img{
+        display: inline-block;
+      }
+    }
+    .content-related &{
+      img{
+        height: 82px;
+        width: 82px;
+      }
+    }
+  }
+}
+
 /* =material
 -------------------------------------------------
 */

@@ -8,7 +8,7 @@
 <form enctype="multipart/form-data"  action={"/user/register/"|ezurl} method="post" name="Register" class="form-signin" onsubmit="checkform();">
 
 <h1 class="container-title">{"Register user"|i18n("design/ocbootstrap/user/register")}</h1>
-
+<h6><small>* {"Required fields"|i18n("design/ocbootstrap/user/register")}</small></h6>
 
 {if and( and( is_set( $checkErrNodeId ), $checkErrNodeId ), eq( $checkErrNodeId, true() ) )}
 <div class="alert alert-danger">
@@ -40,9 +40,10 @@
     <div class="row">
         
         <div class="col-md-6">            
-            {foreach $content_attributes as $attribute max 3}
-            <input type="hidden" name="ContentObjectAttribute_id[]" value="{$attribute.id}" />
-            <p>{attribute_edit_gui attribute=$attribute html_class="form-control input-lg" placeholder=$attribute.contentclass_attribute.name|i18n("design/ocbootstrap/user/register")}</p>
+            {foreach $content_attributes as $attribute max 3}            
+            <input type="hidden" name="ContentObjectAttribute_id[]" value="{$attribute.id}" />  
+            <p>{attribute_edit_gui attribute=$attribute html_class="form-control input-lg" 
+                placeholder=$attribute.contentclass_attribute.name|i18n("design/ocbootstrap/user/register")}</p>
             {/foreach}
            
             {if $currentVerifyUserType|eq('sms')}
@@ -66,7 +67,7 @@
             {/if}
         </div>
         
-        <div class="col-md-6"> 
+        <div class="col-md-6">          
             {foreach $content_attributes as $attribute offset 3}
                 {if $attribute.contentclass_attribute.category|ne('hidden')}
                     {* Salta i campi con categoria hidden*}
@@ -108,7 +109,7 @@
         {else}    
             <input class="btn btn-lg btn-inverse pull-right" type="submit" id="PublishButton" name="PublishButton" disabled="disabled" value="{'Register'|i18n('design/ocbootstrap/user/register')}"  />
         {/if}
-        <input class="btn btn-lg btn-inverse pull-left" type="submit" id="CancelButton" name="CancelButton" value="{'Discard'|i18n('design/ocbootstrap/user/register')}"  />
+        <input class="btn btn-lg btn-inverse pull-left" type="submit" id="CancelButton" name="CancelButton" value="{'Discard'|i18n('design/ocbootstrap/user/register')}" onclick="cancelSubmit();" />
     </div>
 {else}
     <div class="alert alert-danger">
@@ -127,6 +128,10 @@
     {
         document.getElementById( 'PublishButton' ).disabled = true;
         document.getElementById( 'CancelButton' ).disabled = true;
+    }
+    function cancelSubmit(){       
+        document.Register.acceptservice.checked = true;
+        document.Register.acceptinfo.checked = true;
     }
     function checkform() {
    

@@ -1,3 +1,5 @@
+{*include uri='design:openpa/panel/_default.tpl'*}
+
 <div class="media-panel">
   {if $node|has_attribute( 'immagini' )}  
       <a href={$node.url_alias|ezurl()} title="{$node.name|wash()}">
@@ -36,13 +38,16 @@
                 {$node.data_map.descrizione_breve.data_text|openpa_shorten(200)}
             {/if}
         </p>
+ 
+        {include uri='design:parts/related-item.tpl'}
 
+         {* tematica
         <p style="text-transform: uppercase;">
             {if $node|has_attribute( 'tematica' )}
                 {attribute_view_gui attribute=$node|attribute( 'tematica' )}
             {/if}
         </p>
-
+        *}
     </div>
   </div>
 </div>

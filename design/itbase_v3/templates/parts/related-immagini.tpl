@@ -10,8 +10,7 @@
                     <i class="fa fa-camera fa-stack-1x"></i>
                 </span>
             </div>
-        </div>
-
-        {include uri='design:atoms/gallery.tpl' items=$images}
+        </div> 
+        {include uri='design:atoms/gallery.tpl' items=$images thumbnail_class='relatedthumb' can_edit=$can_edit node_id=$node.node_id url_alias=$node.url_alias|ezurl(no)}
     </div>
 {/if}

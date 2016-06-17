@@ -12,7 +12,7 @@
 
 {def $contentSettings = appini( 'MenuContentSettings', 'LeftIdentifierList', array() )}
 
-<div class="nav-section">
+<div class="nav-section" style="display: block;">
   {if $menu_items_count}
     <ul class="nav">
       {foreach $menu_items as $key => $item}

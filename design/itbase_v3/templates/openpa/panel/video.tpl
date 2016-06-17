@@ -46,13 +46,13 @@
         <p class="abstract">
             {$node|abstract()|openpa_shorten(200)}
         </p>
-
+         {* tematica
         <p style="text-transform: uppercase;">
             {if $node|has_attribute( 'tematica' )}
                 {attribute_view_gui attribute=$node|attribute( 'tematica' )}
             {/if}
         </p>
-
+        *}
     </div>
   </div>
 </div>

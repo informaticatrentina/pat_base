@@ -296,8 +296,7 @@ ViewName[in_evidenza]=In Evidenza
 Name=Dove Siamo (parametri presi dalla home)
 NumberOfValidItems=0
 NumberOfArchivedItems=0
-CustomAttributes[]=coordinamento
-CustomAttributes[]=segreteria
+CustomAttributes[]=note
 ManualAddingOfItems=disabled
 ViewList[]
 ViewList[]=default

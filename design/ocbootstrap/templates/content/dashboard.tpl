@@ -17,8 +17,12 @@
         {if $i|mod(2)|eq(1)}
             </div>
         {/if}
-    {set $i = $i|sum(1)}
+        {set $i = $i|sum(1)}
     {/foreach}
+    
+    {if $i|mod(2)|eq(1)}
+        </div>
+    {/if}
 </div>
 
 {* 

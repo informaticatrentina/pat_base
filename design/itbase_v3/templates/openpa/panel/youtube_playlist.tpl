@@ -11,7 +11,7 @@
 {/if}
 
 
-<div class="media-panel youtube_playlist">
+<div class="media-panel">
   {if $node|has_attribute( 'image' )}
       <figure style="background: url( {$node.data_map.image.content.imagefull.full_path|ezroot(no)} )"></figure>
   {/if}

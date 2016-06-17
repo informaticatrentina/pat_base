@@ -1,0 +1,64 @@
+
+// -------- desktop devices
+footer{
+    color: #fff;
+    background-color: $brand-secondary; //#aaa;
+    border-top: 0px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-top: 30px;
+    font-size: 0.85em;
+    
+    .footer-logo{
+        position: relative;
+        text-align: center;
+        width: 90px;
+        height: 90px;
+        display:inline-block;
+        vertical-align: top;
+        *display:inline; /* ie7 fix */
+        float:none;
+        
+        img{
+            width: 100px;
+        }
+    }
+
+    .footer-links{
+        padding-top: 50px;
+        padding-bottom: 20px;
+        border-bottom: 4px solid $brand-primary;
+        
+        .footer-icon{
+            font-size: 2em;
+        }
+    }
+
+    .footer-links-bottom{
+        padding-top: 10px;
+    }
+    
+    .footer-bottom-icon{
+        font-size: 1.5em;
+        padding-right: 5px;
+    }
+
+    a:link, a:visited, a:active{
+        color: #fff;
+    }
+    a:hover{
+        color: $brand-primary;
+    }
+}
+
+// -------- small devices
+@media(max-width: 768px){
+    footer{
+        .footer-links{
+            .footer-icon{
+                font-size: 2em;
+            }
+        }
+    }
+}
+

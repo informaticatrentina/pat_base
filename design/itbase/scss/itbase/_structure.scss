@@ -16,3 +16,28 @@
 .content-related{
   @extend .col-sm-3;
 }
+
+.content-related-folder{
+  @extend .content-related;
+  width: 33% !important;
+  .related-panel-title{
+      text-transform: lowercase;
+      margin-top: 1em;
+      font-size: 1.3em;
+      letter-spacing: 1px;
+  }
+  
+  .related-panel-images{
+        text-align: left;
+        width: 25px;
+        padding-bottom: 5px;        
+  }
+  
+  .related-panel-text{
+      text-transform: lowercase;
+      padding-left: 10px;
+      padding-right: 1px;      
+      text-align: left;
+  }
+}
+

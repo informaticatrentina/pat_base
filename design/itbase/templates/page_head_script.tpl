@@ -7,9 +7,13 @@
 ))}
 
 <script type="text/javascript" src={"javascript/openpa_flat.js"|ezdesign()} ></script>
+
 <script type="text/javascript" src={"javascript/waypoints.min.js"|ezdesign()} ></script>
 <script type="text/javascript" src={"javascript/colorpicker.js"|ezdesign()} ></script>
 <script type="text/javascript" src={"javascript/layout.js"|ezdesign()} ></script>
+<script type="text/javascript" src={"javascript/moment.min.js"|ezdesign()}></script>
+<script type="text/javascript" src={"javascript/jquery.masonry.min.js"|ezdesign()}></script>
+<script type="text/javascript" src={"javascript/masonry.pkgd.js"|ezdesign()}></script>
 
 <!--[if lt IE 9]>
 <script type="text/javascript" src={"javascript/respond.js"|ezdesign()} ></script>
@@ -37,8 +41,9 @@ var UiContext = {/literal}"{$ui_context}"{literal}, UriPrefix = {/literal}{'/'|e
   'bootstrap/tooltip.js',
   'bootstrap/popover.js',
   'bootstrap/scrollspy.js',
-  'bootstrap/transition.js',
+  'bootstrap/transition.js',  
   'waypoints.min.js',
+  'moment.min.js',
   'openpa_flat.js'
 ))}
 
@@ -47,3 +52,6 @@ var UiContext = {/literal}"{$ui_context}"{literal}, UriPrefix = {/literal}{'/'|e
 <script type="text/javascript" src={"javascript/respond.min.js"|ezdesign()} ></script>
 <![endif]-->
 *}
+
+
+<script type="text/javascript" src={"javascript/daterangepicker.js"|ezdesign()}></script>

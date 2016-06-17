@@ -1,3 +1,17 @@
+{if $node|has_attribute( 'show_children' )}
+      {def $children_view=$node.data_map.children_view.class_content.options[$node.data_map.children_view.value[0]].name|downcase()
+           $col_width=6
+           $modulo=2}
+    
+{/if}
+ 
+
+{if $children_view|eq( 'groupbyclass')}
+    {include uri=concat('design:parts/children/', $children_view, '.tpl') col_width=$col_width modulo=$modulo}
+{elseif $children_view|eq( 'groupbyclassonright')}
+    {include uri=concat('design:parts/children/', $children_view, '.tpl') col_width=$col_width modulo=$modulo}
+{else}    
+    
 <div class="content-view-full class-folder row childs-container">
   
   <div class="content-main wide">
@@ -44,9 +58,9 @@
           {set $col_width=4
                $modulo=3}
       {/if}
-      
+                
       {include uri=concat('design:parts/children/', $children_view, '.tpl') col_width=$col_width modulo=$modulo}
-      
+
       {undef $children_view}
     {*else}
       {include uri='design:parts/children.tpl' view='line'*}
@@ -58,3 +72,5 @@
   {*include uri='design:parts/content-related.tpl'*}
 
 </div>
+{/if}
+

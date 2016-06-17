@@ -30,15 +30,20 @@
   {set $node_name = $node|attribute( 'short_name' ).content|wash()}
 {/if}
 
+{def $onclick_false=''}
+{if and($pagedata.is_edit, $modulename|ne('user'), $functionname|ne('register'))} 
+    {set $onclick_false = 'onclick="return false;"'}
+{/if}
+
 {if eq( $node.class_identifier, 'link')}
   <li id="node_id_{$node.node_id}"{if $node_class} class="{$node_class|implode(" ")}"{/if}>
-	<a class="menu-item-link" {if eq( $ui_context, 'browse' )}href={concat("content/browse/", $node.node_id)|ezurl}{else}href={$node.data_map.location.content|ezurl}{if and( is_set( $node.data_map.open_in_new_window ), $node.data_map.open_in_new_window.data_int )} target="_blank"{/if}{/if}{if $pagedata.is_edit} onclick="return false;"{/if} title="{$node.data_map.location.data_text|wash}" rel={$node.url_alias|ezurl}>{if $node.data_map.location.data_text}{$node.data_map.location.data_text|wash()}{else}{$node_name}{/if}</a>
+	<a class="menu-item-link" {if eq( $ui_context, 'browse' )}href={concat("content/browse/", $node.node_id)|ezurl}{else}href={$node.data_map.location.content|ezurl}{if and( is_set( $node.data_map.open_in_new_window ), $node.data_map.open_in_new_window.data_int )} target="_blank"{/if}{/if} {$onclick_false} title="{$node.data_map.location.data_text|wash}" rel={$node.url_alias|ezurl}>{if $node.data_map.location.data_text}{$node.data_map.location.data_text|wash()}{else}{$node_name}{/if}</a>
 {else}
   <li id="node_id_{$node.node_id}"{if $node_class} class="{$node_class|implode(" ")}"{/if}>
   {*if gt($sub_menu_items|count(),0)}	
 	<a href="#" class="dropdown-toggle" data-toggle="dropdown">{$node_name}  <i class="fa fa-chevron-down"></i></a>
   {else*}
-	<a href={if eq( $ui_context, 'browse' )}{concat("content/browse/", $node.node_id)|ezurl}{else}{$node.url_alias|ezurl}{/if}{if $pagedata.is_edit} onclick="return false;"{/if}>{$node_name}</a>
+	<a href={if eq( $ui_context, 'browse' )}{concat("content/browse/", $node.node_id)|ezurl}{else}{$node.url_alias|ezurl}{/if} {$onclick_false}>{$node_name}</a>
   {*/if*}
 {/if}
 

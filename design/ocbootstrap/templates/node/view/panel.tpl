@@ -1,2 +1,2 @@
 {def $openpa = object_handler($node)}
-{include uri=$openpa.control_template.panel}
+{include uri=$openpa.control_template.panel is_block=$is_block}

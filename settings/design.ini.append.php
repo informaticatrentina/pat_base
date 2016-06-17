@@ -11,6 +11,7 @@ DesignExtensions[]=pat_base
 [StylesheetSettings]
 FrontendCSSFileList[]=tree.css
 FrontendCSSFileList[]=colorpicker.css
+FrontendCSSFileList[]=daterangepicker.css
 
 StylesheetBaseFile[]=/pat_base/design/itbase_v2/scss/bootstrap/_variables2.scss
 StylesheetDestinationFile[]=/pat_base/design/itbase_v2/scss/bootstrap/_variables3.scss

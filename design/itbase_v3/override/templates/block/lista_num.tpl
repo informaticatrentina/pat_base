@@ -29,7 +29,8 @@
          autoplay=0
          image_class=squaremedium
          auto_height=true()
-         items_per_row=$items_per_row}
+         items_per_row=$items_per_row
+         is_block=true()}
          
          {if and(is_set($block.custom_attributes.show_all_btn), $block.custom_attributes.show_all_btn|eq('SI'))}
             <div class="text-right">

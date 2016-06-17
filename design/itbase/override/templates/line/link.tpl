@@ -6,10 +6,10 @@
   {/if}
   <div class="media-body">
     <h3 class="media-heading">
-        <a href="{$node.data_map.location.content}" target="_blank">
             <i class="fa fa-link"></i>
-            {$node.name|wash} 
-        </a>
+            <a href="{$node.data_map.location.content}" target="_blank">
+                {$node.name|wash} 
+            </a>
         <div class="pull-right">
             
             {include uri='design:parts/toolbar/node_toolbar.tpl' current_node=$node}

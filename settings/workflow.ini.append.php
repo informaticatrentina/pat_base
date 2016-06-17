@@ -6,5 +6,6 @@ AvailableOperationList[]=content_updateobjectstate
 [EventSettings]
 ExtensionDirectories[]=pat_base
 AvailableEventTypes[]=event_childspropagationstate
-
+AvailableEventTypes[]=event_importcomunicati
+ 
 */ ?>

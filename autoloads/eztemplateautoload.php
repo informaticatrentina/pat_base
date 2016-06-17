@@ -12,3 +12,8 @@ $eZTemplateOperatorArray[] = array( 'class' => 'FooterOperator',
 $eZTemplateOperatorArray[] = array( 'script' => 'extension/pat_base/autoloads/patoperators.php',
                                     'class' => 'PatOperators',
                                     'operator_names' => array( 'organigramma' ) );
+
+// Operator: http_header
+$eZTemplateOperatorArray[] = array( 'script' => 'extension/pat_base/autoloads/patoperators.php',
+                                    'class' => 'PatOperators',
+                                    'operator_names' => array( 'http_header' ) );

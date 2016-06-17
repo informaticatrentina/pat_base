@@ -23,7 +23,7 @@
     {/foreach}
 {/if}
 
-{def $has_sidebar = false()}
+{def $has_sidebar = true()}
 {if or(
 $node|has_attribute( 'struttura' ),
 $node|has_attribute( 'allegati' ),
@@ -50,20 +50,21 @@ $matrix_link_has_content
                     </small><br />
                 {/if}
                 {$node.name|wash()}
+                
+                
             </h1>
-
-
+            {if $node|has_attribute( 'sottotitolo' )}
+                <h3>
+                    {attribute_view_gui attribute=$node|attribute( 'sottotitolo' )}
+                </h3>
+            {/if}
+            
+            
             <div class="row">
                 <div class="col-xs-2 content-line">
 
                 </div>
             </div>
-
-            {if $node|has_attribute( 'sottotitolo' )}
-                <h2>
-                    {attribute_view_gui attribute=$node|attribute( 'sottotitolo' )}
-                </h2>
-            {/if}
         </div>
 
         {if $node|has_attribute( 'abstract' )}
@@ -90,7 +91,7 @@ $matrix_link_has_content
         
         {if or( $node|has_attribute( 'numero' ), $node|has_attribute( 'argomento' ) )}
             <p class="pull-right">
-                {if $node|has_attribute( 'numero' )}
+                {if and($node|has_attribute( 'numero' ), $node|attribute( 'numero' ).data_int|ne(0) ) }
                     <span>Comunicato {attribute_view_gui attribute=$node|attribute( 'numero' )}</span>
                 {/if}
                 {if $node|has_attribute( 'argomento' )}
@@ -113,6 +114,14 @@ $matrix_link_has_content
             {include uri='design:parts/related-fonte.tpl'}
             {include uri='design:parts/related-geo.tpl'}
             {include uri='design:parts/related-script.tpl'}
+       
+            </br>
+            <a class="btn btn-primary btn-lg"
+                title="{'Export'|i18n('design/standard/parts/website_toolbar')}"
+                href={concat('/content/view/pdf/', $node.node_id)|ezurl()}>
+                 <i class="fa fa-print"></i>
+                 Versione Stampabile
+         </a>
         </div>
     {/if}
 

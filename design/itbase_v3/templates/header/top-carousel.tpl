@@ -22,9 +22,8 @@
 
     <div id="carousel_{$css_id}" class="owl-carousel top-carousel">
         {foreach $items as $item}
-            <div class="item" style='background-image: url({include uri='design:header/top-image.tpl' node=$item image_class=$image_class});'>
-                {*Caption*}
-                &nbsp;
+            <div class="item">
+                <img src={include uri='design:header/top-image.tpl' node=$item image_class=$image_class}>
             </div>
         {/foreach}
     </div>
@@ -44,9 +43,55 @@
                     "<i class='fa fa-angle-right fa-5x'></i>"
                 ],
                 pagination: false,
-                mouseDrag: false
-                {rdelim});
+                mouseDrag: false,
+                // Callbacks
+                afterInit: adaptHeader,
+                afterMove: adaptHeader
             {rdelim});
+            
+            // Chiamata per addattare il posizionamento degli elementi dell'header
+            function adaptHeader(elem){ldelim}
+                var current = this.currentItem;
+                var img_height = elem.find(".owl-item").eq(current).find("img").height();
+                var img_width = elem.find(".owl-item").eq(current).find("img").width();
+                // console.log('Image current height is: ' + img_height);
+                
+                // Posizionmento dinamico componenti
+                $("#header").height( img_height + (img_height/30) );
+                
+                if( $("#ezwt")[0] ){ldelim}
+                    $(".site-title").css( "margin-top", img_height - 127 );
+                {rdelim}
+                else{ldelim}
+                    $(".site-title").css( "margin-top", img_height - 74 );
+                {rdelim}
+                    
+                elem.find(".owl-prev").css( "top" , (img_height / 2) - 66 );
+                elem.find(".owl-next").css( "top" , (img_height / 2) - 66 );
+                $(".tob-bar-icons").css( "top", img_width / 80 );
+            {rdelim}
+        {rdelim});
+        
+        function initCarousel(){ldelim}
+             var owl = $('.top-carousel');
+ 
+            // get owl instance from element
+            var owlInstance = owl.data('owlCarousel');
+
+            // if instance is existing
+            if(owlInstance !== null)
+                owlInstance.reinit();
+        {rdelim}
+        
+        // Reinizializza il caousel se viene ridimensionata la finestra
+        $( window ).resize(function() {ldelim}
+            initCarousel();
+        {rdelim});
+        
+        // Reinizializza il caousel dopo il caricamento completo della finestra
+        $(window).on("load", function() {ldelim}
+            initCarousel();
+        {rdelim});
     </script>
     {/if}
 {/if}
