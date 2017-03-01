@@ -11,8 +11,28 @@
     {/if}
     <ul class="list-unstyled">
         {foreach $valid_nodes as $i => $valid_node}
+            
+            {* Verifica se è un Link *}
+            {def $node_url = $valid_node.url_alias
+                 $target = '_self'}
+            {if $valid_node.object.class_identifier|eq('link')}
+                {set $node_url=$valid_node|attribute('location').content}
+                {if $valid_node|attribute('open_in_new_window').content|eq(1)}
+                    {set $target = '_blank'}
+                {/if}
+            {/if}
+            {* Verifica se è un File *}
+            {if $valid_node.object.class_identifier|eq('file')}
+                {*$valid_node|attribute('file')|attribute('show')*}
+                {def $file = $valid_node|attribute('file')}
+                {set $node_url = concat( 'content/download/', $file.contentobject_id, '/', $file.id,'/version/', $file.version , '/file/', $file.content.original_filename|urlencode )}
+                {set $target = '_blank'}
+                {undef $file}
+            {/if}
+            {* ** *}
+            
             <li>
-                <a href={$valid_node.url|ezurl()}>
+                <a href={$node_url|ezurl()} target="{$target}">
                     <div class="row">
                         <div class="col-xs-12">
                             {$valid_node.name|wash()}
@@ -25,6 +45,8 @@
                     </div>
                 </a>
             </li>
+            {undef $node_url
+                   $target}
         {/foreach}
     </ul>
 </div>

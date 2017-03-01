@@ -142,6 +142,13 @@ Subdir=templates
 Match[type]=Lista
 Match[view]=lista_num
 
+[block_lista_num_responsive]
+Source=block/view/view.tpl
+MatchFile=block/lista_num_responsive.tpl
+Subdir=templates
+Match[type]=Lista
+Match[view]=lista_num_responsive
+ 
 [block_lista_evidenza]
 Source=block/view/view.tpl
 MatchFile=block/lista_evidenza.tpl
@@ -227,7 +234,15 @@ MatchFile=block/lista_carousel.tpl
 Subdir=templates
 Match[type]=Lista3
 Match[view]=lista_carousel
-
+ 
+# Blocco per Codice HTML
+[block_html]
+Source=block/view/view.tpl
+MatchFile=block/html.tpl
+Subdir=templates
+Match[type]=HTML
+Match[view]=html
+ 
 ################################
 ################################ OCBOOSTRAP LINE
 ################################

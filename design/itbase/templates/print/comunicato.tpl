@@ -9,8 +9,11 @@
 </p>
 <p>
     <b>
-        COMUNICATO n. 
-        {attribute_view_gui attribute=$node|attribute( 'numero' )}
+        COMUNICATO
+        {if $node|attribute( 'numero' ).data_int|ne(0)}
+            n. 
+            {attribute_view_gui attribute=$node|attribute( 'numero' )}
+        {/if}
         del 
         {$node.data_map.published.content.timestamp|l10n('shortdate')}
     </b>

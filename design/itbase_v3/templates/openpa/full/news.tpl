@@ -28,7 +28,6 @@
 $node|has_attribute( 'struttura' ),
 $node|has_attribute( 'allegati' ),
 $node|has_attribute( 'audio' ),
-$node|has_attribute( 'fonte' ),
 $node|has_attribute( 'geo' ),
 gt($images|count,1), $matrix_link_has_content
 )}
@@ -38,16 +37,31 @@ gt($images|count,1), $matrix_link_has_content
 <div class="content-view-full class-{$node.class_identifier} row">
     <div class="content-main{if $has_sidebar|not()} wide{/if} body-news">
         <div class="content-title">
-            {if $node|has_attribute( 'published' )}
-                <span class="date">{$node|attribute( 'published' ).content.timestamp|l10n( 'date' )} </span>
-            {/if}
-
-            <h1>
-                {if $node|has_attribute( 'occhiello' )}
-                    <small style="font-weight: normal;color: #000">
+            <div class="row">
+                <div class="col-xs-6">
+                    {if $node|has_attribute( 'published' )}
+                        <span class="date">{$node|attribute( 'published' ).content.timestamp|l10n( 'date' )} </span>
+                    {/if}
+                </div>
+               <div class="col-xs-6 text-right">  
+                    <a href="javascript:void(0);" data-toggle="collapse" data-target="#sharebuttons">
+                    <i class="fa fa-share-alt fa-2x share"  ></i>
+                    </a>
+                    <div id="sharebuttons" class="collapse">
+                        {include uri='design:parts/social_buttons.tpl'}
+                    </div>
+                        
+                </div>
+            </div>
+                    
+            {if $node|has_attribute( 'occhiello' )}
+                <div class="occhiello">
+                    <h3>
                         {attribute_view_gui attribute=$node|attribute( 'occhiello' )}
-                    </small><br />
-                {/if}
+                    </h3>
+                </div>
+            {/if} 
+            <h1>
                 {$node.name|wash()}
             </h1>
             
@@ -59,9 +73,9 @@ gt($images|count,1), $matrix_link_has_content
             </div>
 
             {if $node|has_attribute( 'sottotitolo' )}
-                <h2>
+                <h3>
                     {attribute_view_gui attribute=$node|attribute( 'sottotitolo' )}
-                </h2>
+                </h3>
             {/if}
 
         </div>
@@ -71,32 +85,36 @@ gt($images|count,1), $matrix_link_has_content
                 {attribute_view_gui attribute=$node|attribute( 'abstract' )}
             </div>
         {/if}
+        
+        {if $node|has_attribute( 'testo_completo' )}
+            <div class="description">
+                {attribute_view_gui attribute=$node|attribute( 'testo_completo' )}
+            </div>
+        {/if}
 
         {if gt($images|count,0)}
             <div class="main-image">
                 {include uri='design:atoms/image.tpl' item=$images[0] image_class=appini( 'ContentViewFull', 'DefaultImageClass', 'wide' ) caption=$images[0]|attribute( 'caption' ) alignment=center}
             </div>
         {/if}
-
-        {if $node|has_attribute( 'testo_completo' )}
-            <div class="description">
-                {attribute_view_gui attribute=$node|attribute( 'testo_completo' )}
-            </div>
-        {/if}
         
-        {if or( $node|has_attribute( 'numero' ), $node|has_attribute( 'argomento' ) )}
+        {if or( $node|has_attribute( 'numero' ), $node|has_attribute( 'argomento' ), $node|has_attribute( 'tematica' ) )}
             <p class="pull-right">
                 {if $node|has_attribute( 'numero' )}
-                    <span>Comunicato {attribute_view_gui attribute=$node|attribute( 'numero' )}</span>
+                    <span class="numero-comunicato">Comunicato {attribute_view_gui attribute=$node|attribute( 'numero' )}</span>
                 {/if}
+            </p>
+            <p class="pull-right">
                 {if $node|has_attribute( 'argomento' )}
-                    <span style="margin-left: 10px;">{attribute_view_gui attribute=$node|attribute( 'argomento' )}</span>
+                    {attribute_view_gui attribute=$node|attribute( 'argomento' )}
+                {/if}
+                {if $node|has_attribute( 'tematica' )}
+                    {attribute_view_gui attribute=$node|attribute( 'tematica' )}
                 {/if}
             </p>
         {/if}
         
-        <hr/>{include uri='design:parts/social_buttons.tpl'}
-
+        <hr/>
     </div>
 
     {if $has_sidebar}
@@ -106,7 +124,7 @@ gt($images|count,1), $matrix_link_has_content
             {include uri='design:parts/related-audio.tpl'}
             {include uri='design:parts/related-immagini.tpl'}
             {include uri='design:parts/related-link.tpl'}
-            {include uri='design:parts/related-fonte.tpl'}
+            {*include uri='design:parts/related-fonte.tpl'*}
             {include uri='design:parts/related-geo.tpl'}
             {include uri='design:parts/related-script.tpl'}
         </div>

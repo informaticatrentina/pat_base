@@ -2,7 +2,8 @@
   'show_date', false()
 ))}
 
-<li class="media">
+
+<li class="media mymedia">
   {*if $node|has_attribute( 'image' )}
   <a class="pull-left" href="{if is_set( $node.url_alias )}{$node.url_alias|ezurl('no')}{else}#{/if}">    
 	{attribute_view_gui attribute=$node|attribute( 'image' ) href=false() image_class='squaremini' css_class="media-object"}

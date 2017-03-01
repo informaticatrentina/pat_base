@@ -22,8 +22,10 @@
 {if or(
     $node|has_attribute( 'allegati' ),
     gt($images|count,1),
-    $matrix_link_has_content
-)}
+    $matrix_link_has_content , 
+    $node|has_attribute( 'sfoglia_online' ),
+    $node|has_attribute( 'file' )
+    )}
     {set $has_sidebar = true()}
 {/if}
 
@@ -37,25 +39,11 @@
                     <div class="figure image-main" style="height:200px;width:500px;">
                     </div>
                 {/if}
-                <p>
-                    {if $node|has_attribute( 'sfoglia_online' )}
-                        <a class="btn btn-default btn-xs" 
-                            href="{$node.object.data_map.sfoglia_online.content}" 
-                            target="_blank">
-                             SFOGLIA ONLINE
-                         </a>
-                    {/if}
-                    {if $node|has_attribute( 'file' )}
-                        &nbsp;
-                        {def $file = $node|attribute( 'file' )}
-                        <a href={concat("content/download/",$file.contentobject_id,"/",$file.id,"/file/",$file.content.original_filename)|ezurl}>
-                            <i class="fa fa-download"></i>
-                        </a>
-                        {undef $file}
-                    {/if}
-                </p>
             </div>
         </div>
+        <div class="spacer">&nbsp;</div> 
+        <div class="spacer">&nbsp;</div> 
+        
         <h2>
             {$node.name|wash()}
         </h2>
@@ -65,39 +53,53 @@
 
             </div>
         </div>
-        
-        {if $node|has_attribute('anno')}
-            <p>
+        <div class="row-pubblicazione">
+            {if $node|has_attribute('anno')}
+                <div>
                 Anno {attribute_view_gui attribute=$node.data_map.anno}
-            </p>
-        {/if}
-        {if $node|has_attribute('mese')}
-            <p>
-                Mese {attribute_view_gui attribute=$node.data_map.mese}
-            </p>
-        {/if}
-        {if $node|has_attribute('numero')}
-            <p>
-                Numero {attribute_view_gui attribute=$node.data_map.numero}
-            </p>
-        {/if}
+                </div>
+            {/if}
+            {if $node|has_attribute('mese')}
+                <div>
+                    Mese {attribute_view_gui attribute=$node.data_map.mese}
+                </div>
+            {/if}
+            {if $node|has_attribute('numero')}
+                <div>
+                    Numero {attribute_view_gui attribute=$node.data_map.numero}
+                </div>
+            {/if}
+            <div>
+                {def $file = $node|attribute( 'file' )}
+                Documento <a href={concat("content/download/",$file.contentobject_id,"/",$file.id,"/file/",$file.content.original_filename)|ezurl}>
+                    {$file.content.original_filename|wash(xhtml)} ({$file.content.filesize|si(byte)})              
+                </a>
+                {undef $file}
+            </div>            
+            <div>
+                Data di pubblicazione {attribute_view_gui attribute=$node.data_map.data}            
+            </div>
+            <div class="spacer">&nbsp;</div> 
         
-        {if $node|has_attribute( 'abstract' )}
-            <div class="abstract">
-                {attribute_view_gui attribute=$node|attribute( 'abstract' )}
-             </div>
-        {/if}
+         </div>
+         
+            {if $node|has_attribute( 'abstract' )}
+                <div class="abstract">
+                    {attribute_view_gui attribute=$node|attribute( 'abstract' )}
+                 </div>
+            {/if}
 
-        {if $node|has_attribute( 'sommario' )}
-            <div class="sommario-rivista">
-                <p>{attribute_view_gui attribute=$node|attribute( 'sommario' )}</p>
-            </div>
-        {/if}
-        {if $node|has_attribute( 'descrizione' )}
-            <div class="description">
-                {attribute_view_gui attribute=$node|attribute( 'descrizione' )}
-            </div>
-        {/if}
+            {if $node|has_attribute( 'sommario' )}
+                <a name="sommario"></a>
+                <div class="sommario-rivista" name="sommario">
+                    <p>{attribute_view_gui attribute=$node|attribute( 'sommario' )}</p>
+                </div>
+            {/if}
+            {if $node|has_attribute( 'descrizione' )}
+                <div class="description">
+                    {attribute_view_gui attribute=$node|attribute( 'descrizione' )}
+                </div>
+            {/if}
     </div>
     
     {if $has_sidebar}
@@ -105,6 +107,14 @@
             {include uri='design:parts/related-immagini.tpl'}
             {include uri='design:parts/related-allegati.tpl'}
             {include uri='design:parts/related-link.tpl'}
+            {if $node|has_attribute( 'sfoglia_online' )}
+                {include uri='design:parts/related-sfoglia.tpl'}
+            {/if}
+            {if $node|has_attribute( 'file' )}
+                {include uri='design:parts/related-download.tpl'}
+            {/if}
+            
+            
             {include uri='design:parts/related-script.tpl'}
         </div>
     {/if}

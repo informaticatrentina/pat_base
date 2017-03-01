@@ -1,15 +1,26 @@
 {def $root_node = fetch(content, node, hash( node_id, ezini('NodeSettings', 'RootNode', 'content.ini')))}
 
-{def $images = array()}
+{def $node = fetch(content, node, hash( node_id, $pagedata.node_id))}
+{*$node|attribute('show')*}
 
-{if gt($root_node.data_map.immagini.content.relation_list|count, 0)}
+{def $images = array()
+     $landing_node = false}
+
+{if and($pagedata.node_id, $pagedata.node_id|ne(2))}
+    {set $landing_node = header_images($pagedata.node_id)}
+{/if}
+
+{if and($landing_node, gt($landing_node.data_map.immagini.content.relation_list|count, 0))}
+    {foreach $landing_node.data_map.immagini.content.relation_list as $relation_item}
+        {set $images = $images|append(fetch('content','node',hash('node_id',$relation_item.node_id)))}
+    {/foreach}
+{elseif gt($root_node.data_map.immagini.content.relation_list|count, 0)}
     {foreach $root_node.data_map.immagini.content.relation_list as $relation_item}
         {set $images = $images|append(fetch('content','node',hash('node_id',$relation_item.node_id)))}
     {/foreach}
 {else}
     {set $images = $images|append('"/ptn/header_image"')}
 {/if}
-
 
 {if $root_node|has_attribute('short_name')|not()}
     <a href={"/"|ezurl} title="{$root_node.name}">

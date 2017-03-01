@@ -18,7 +18,7 @@
     {if $root_node}
 
     {ezscript_require( array( 'ezjsc::jquery', 'plugins/owl-carousel/owl.carousel.js', "plugins/blueimp/jquery.blueimp-gallery.min.js" ) )}
-    {ezcss_require( array( 'plugins/owl-carousel/owl.carousel.css', 'plugins/owl-carousel/owl.theme.css', "plugins/blueimp/blueimp-gallery.css" ) )}
+    {ezcss_require( array( 'plugins/owl-carousel/owl.transitions.css' , 'plugins/owl-carousel/owl.carousel.css', 'plugins/owl-carousel/owl.theme.css', "plugins/blueimp/blueimp-gallery.css" ) )}
 
     <div id="carousel_{$css_id}" class="owl-carousel top-carousel">
         {foreach $items as $item}
@@ -44,6 +44,11 @@
                 ],
                 pagination: false,
                 mouseDrag: false,
+                
+                {if count($items)|gt(1)}
+                transitionStyle: "fade",
+                {/if}
+                    
                 // Callbacks
                 afterInit: adaptHeader,
                 afterMove: adaptHeader

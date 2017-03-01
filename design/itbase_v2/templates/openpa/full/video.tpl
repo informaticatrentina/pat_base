@@ -40,8 +40,21 @@
               {$node.data_map.video_url.content|autoembed(array( '<div class="video-container">', '</div>' ), hash( 'width', '600' ) )}
             </div>
           {/if}
+          {if $node.data_map.abstract.has_content}
+                <div class="attribute-short float-break">
+                    <div class="spacer">&nbsp;</div>  
+                    {attribute_view_gui attribute=$node.data_map.abstract} 
+                </div>
+          {/if}
+          {if $node.data_map.testo.has_content}
+                <div class="attribute-short float-break">
+                    <div class="spacer">&nbsp;</div>  
+                    {attribute_view_gui attribute=$node.data_map.testo} 
+                </div>
+          {/if}
         </div>
-
+        
+            
         <div class="content-related">
             {include uri='design:parts/social_buttons.tpl'}
 
@@ -63,11 +76,7 @@
 
             <hr/>
 
-            {if $node.data_map.abstract.has_content}
-                <div class="attribute-short float-break">
-                    {attribute_view_gui attribute=$node.data_map.abstract}
-                </div>
-            {/if}
+            
 
         </div>
     {else}

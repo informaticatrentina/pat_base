@@ -8,8 +8,10 @@
 class ImportComunicatiType extends eZWorkflowEventType
 {
     const WORKFLOW_TYPE_STRING = "importcomunicati";    
-    const PUBLISH_CLASS = 'comunicato';
+    const PUBLISH_CLASS_COMUNICATO = 'comunicato';
+    const PUBLISH_CLASS_NEWS = 'news';
     
+    const PUBLISH_CLASS_VIDEO = 'video';
     
     public function __construct()
     {
@@ -30,7 +32,7 @@ class ImportComunicatiType extends eZWorkflowEventType
             $version = $object->version( $parameters['version'] );
             $classIdentifier = $version->ContentObject->ClassIdentifier;
             // Verifica se la classe è corretta
-            if ($classIdentifier == self::PUBLISH_CLASS ){
+            if ( ($classIdentifier == self::PUBLISH_CLASS_COMUNICATO ) or ($classIdentifier == self::PUBLISH_CLASS_NEWS )) {
                 
                 $objectAttributes = $version->attribute( 'contentobject_attributes' );
                 // cicla sugl iattributi
@@ -42,17 +44,47 @@ class ImportComunicatiType extends eZWorkflowEventType
                         $publisheddate = $objectAttribute->attribute( 'content' );
                     }
                 }
-                // set della data di pubblicazione
-                if ( $publisheddate instanceof eZDateTime || $publisheddate instanceof eZDate )
-                {
-                    $object->setAttribute( 'published', $publisheddate->timeStamp() );
-                    $object->store();
-                    eZContentOperationCollection::registerSearchObject( $object->attribute( 'id' ) );
-                    eZDebug::writeNotice( 'Workflow change object publish date', __METHOD__ );
+                if ((strval($publisheddate->timeStamp())) != ''){
+                    // set della data di pubblicazione
+                    if ( $publisheddate instanceof eZDateTime || $publisheddate instanceof eZDate )
+                    {
+                        $object->setAttribute( 'published', $publisheddate->timeStamp() );
+                        $object->store();
+                        eZContentOperationCollection::registerSearchObject( $object->attribute( 'id' ) );
+                        eZDebug::writeNotice( 'Workflow change object publish date', __METHOD__ );
+                    }
                 }
                 //echo('<br>*** die workflow ***');
                 //die();  
             }
+            
+            // Verifica se la classe VIDEO è corretta
+            if ($classIdentifier == self::PUBLISH_CLASS_VIDEO ){
+                
+                $objectAttributes = $version->attribute( 'contentobject_attributes' );
+                // cicla sugl iattributi
+                foreach ( $objectAttributes as $objectAttribute )
+                {
+                    $contentClassAttributeIdentifier = $objectAttribute->ContentClassAttributeIdentifier;                    
+                    if ($contentClassAttributeIdentifier == 'data'){       
+                        // recupera la data di pubblicazione
+                        $publisheddate = $objectAttribute->attribute( 'content' );                       
+                    }
+                }
+                if ((strval($publisheddate->timeStamp())) != ''){
+                    // set della data di pubblicazione
+                    if ( $publisheddate instanceof eZDateTime || $publisheddate instanceof eZDate )
+                    {
+                        $object->setAttribute( 'published', $publisheddate->timeStamp() );
+                        $object->store();
+                        eZContentOperationCollection::registerSearchObject( $object->attribute( 'id' ) );
+                        eZDebug::writeNotice( 'Workflow change object publish date', __METHOD__ );
+                    }
+                }
+                //echo('<br>*** die workflow ***');
+                //die();  
+            }
+            
             return eZWorkflowType::STATUS_ACCEPTED;    
         }
         catch( Exception $e )

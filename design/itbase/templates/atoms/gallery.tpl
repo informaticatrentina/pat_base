@@ -3,49 +3,38 @@
 {ezcss_require( array( "plugins/blueimp/blueimp-gallery.css" ) )}
 
 {set_defaults( hash(  
-  'thumbnail_class', 'squarethumb',
+  'thumbnail_class', 'relatedthumb',
   'wide_class', 'imagefullwide',
   'items', array(),
   'fluid', false(),
-  'mode', 'strip'
+  'mode', 'strip',
+  'link_node', false(),
+  'node_id', $node.node_id,
+  'pullleft', false()
 ))}
-
-<div class="gallery gallery-{$mode}" id="galleryBlueimp{$node_id}" >
-  {if $title}
-    <h2>{$title}</h2>
-  {/if}
+{def $caption=''}    
+{def $credits=''}
+{def $titolo =''}
+<div class="gallery gallery-{$mode}" id="galleryBlueimp{$node_id}">
   
   {foreach $items as $item}
-    {def $caption=''}    
-    {def $credits=''}
-    {def $titolo = $item.name|wash()}    
+    {set $caption=''}    
+    {set $credits=''}
+    {set $titolo = $item.name|wash()} 
+   
     {if $item|has_attribute( 'caption' )}
       {set $caption = $item.data_map.caption.data_text|wash()}    
     {/if}
     {if $item|has_attribute( 'credits' )}
         {if $item.data_map.caption.has_content}             
-            {set $credits = concat( ' - ' , $item.data_map.credits.data_text|wash())}
+            {set $credits = concat( ' -#### ' ,  $item.data_map.credits.data_text|wash() , ' ')}
         {else}
-            {set $credits = $item.data_map.credits.data_text|wash()}
+            {set $credits = concat( '####' , $item.data_map.credits.data_text|wash())}
         {/if}
     {/if}
-    
-    <a class="gallery-strip-thumbnail" href={$item|attribute('image').content[$wide_class].url|ezroot} title="{$titolo}" data-description="{$caption} {$credits}" data-gallery>
-        {attribute_view_gui attribute=$item|attribute('image') image_class=$thumbnail_class fluid=$fluid}
-        
-    </a>
     {*  Se possibile attiva il pulsante di edit *}        
     {if $can_edit}
-        <span style="position: absolute;                  
-                  padding-top: 8px;
-                  padding-bottom: 8px;
-                  padding-left: 10px;
-                  padding-right: 10px;
-                  margin-top: 2px;
-                  margin-left: -45px;
-                  color: white;
-                  background-color: rgba(0,0,0,0.8);
-                  cursor: pointer;"
+        <span class="gallery-edit-pencil"
                   onclick="document.getElementById('ContentObjectedit{$item.object.id}').submit(); event.stopPropagation();">
             <h3 style="margin-bottom: 0px; 
                        margin-top: 0px;">
@@ -53,9 +42,24 @@
             </h3>
         </span>  
     {/if}
-    {undef $caption}
+    <a class="gallery-strip-thumbnail {$thumbnail_class} {$pullleft}"
+    {if $link_node|not()}
+       href={$item|attribute('image').content[$wide_class].url|ezroot} 
+       title="{$titolo}" 
+       data-description="{$caption} {$credits}" data-gallery
+    {else}
+        href={$node.url_alias|ezurl()} onclick="event.stopPropagation();"
+    {/if}
+        >
+        {attribute_view_gui attribute=$item|attribute('image') image_class=$thumbnail_class fluid=$fluid}
+    </a>
+    
+  
     {/foreach}
 </div>
+{undef $caption}
+{undef $credits}
+{undef $titolo}  
 
 {if $can_edit}
     {foreach $items as $item}
@@ -76,7 +80,7 @@
 <style>
     .blueimp-gallery > .description, .blueimp-gallery > .example {
     position:fixed;
-    bottom:30px;
+    bottom:0px;
     width:100%;    
     color: #fff;    
     font-size: 20px;
@@ -84,7 +88,7 @@
     color: #fff;
     text-shadow: 0 0 2px #000;
     opacity: 0.8;
-    text-align: center;
+    text-align: left;
     display: none;
   }
   .blueimp-gallery-controls > .description, .blueimp-gallery-controls > .example {
@@ -96,7 +100,7 @@
 
    document.getElementById('galleryBlueimp{/literal}{$node_id}{literal}').onclick = function (event) {
     event = event || window.event;
-    var curIndex = 0;
+    
     var target = event.target || event.srcElement,
         link = target.src ? target.parentNode : target,
         options = {
@@ -110,22 +114,67 @@
                     node.empty();
                     
                 if (text) {
-                    node[0].appendChild(document.createTextNode(text));
+                    node[0].appendChild(boldHTML(text));
+                    node[0].appendChild(italicHTML(text));
                 }
                 console.log(index);               
             };
         initializeAdditional(index, 'data-description', '.description', self);
         initializeAdditional(index, 'data-example', '.example', self);
+        
+        // Allineamento didascalia
+        var img_src = self.list[index];
+        var img = new Image();
+        img.src = img_src;
+        
+        img.onload = function() {
+            var captionMargin = ($(window).width()-this.width)/2.0;
+            var captionBottom = (($(window).height()-this.height)/2.0)-50;
+            
+            if(captionBottom >= 0){
+                $(".blueimp-gallery > .description, .blueimp-gallery > .example").css('margin-left',captionMargin+'px');
+                $(".blueimp-gallery > .description, .blueimp-gallery > .example").css('bottom',captionBottom+'px');
+                
+                $(".blueimp-gallery-controls > .title").css('top',captionBottom+'px');
+                $(".blueimp-gallery-controls > .title").css('margin-left',captionMargin+'px');
+                $(".blueimp-gallery-controls > .title").css('left','0px');
+            }
+            else{
+                $(".blueimp-gallery > .description, .blueimp-gallery > .example").css('text-align', 'center');
+            }
+            console.log('image width: ' + this.width);
+        };
+        
       }
     },
     links = this.getElementsByTagName('a');
-    
-    var availHeight = window.screen.availHeight;
-    var availWidth = window.screen.availWidth;
-    var parent = document.getElementById("blueimp-gallery_slide");    
-    var imgChild = parent.getElementsByTagName('div');     
+        
     blueimp.Gallery(links, options);
     };
 
+    function italicHTML(text) {
+        var posX = text.indexOf('####');       
+        if(posX > 0){            
+            var res = text.split("####");
+            text = res[1];            
+        }    
+        else
+            text = '';
+        
+        var element = document.createElement("i");
+        element.innerHTML = text;
+        return element;
+    }
+    function boldHTML(text) {
+        var posX = text.indexOf('####');       
+        if(posX > 0){            
+            var res = text.split("####");
+            text = res[0];            
+        }          
+        var element = document.createElement("x");
+        element.innerHTML = text;
+        return element;
+    }
+    
 </script>
 {/literal}

@@ -28,16 +28,31 @@
                   <div class="row">
             {/if}
             <div class="col-sm-2">
-                    {if $child|has_attribute( 'image' )}			
-                          {include uri='design:atoms/image.tpl' href=$child.url_alias|ezurl() item=$child image_class=squarethumb alignment=center image_css_class="img-circle"}  
+                {* Verifica se è un Link *}
+                {def $child_url = $child.url_alias
+                     $target = '_self'}
+                {if $child.object.class_identifier|eq('link')}
+                    {set $child_url=$child|attribute('location').content}
+                    {if $child|attribute('open_in_new_window').content|eq(1)}
+                        {set $target = '_blank'}
                     {/if}
-                    <div class="caption">
-                          <h5 class="text-center">
-                              <a href={$child.url_alias|ezurl()} alt="{'Read more'|i18n('ocbootstrap')} {$child.name|wash()}">
-                                  {$child.name|wash()}
-                              </a>
-                          </h5>
-                    </div>
+                {/if}
+                {* ** *}
+
+
+                {if $child|has_attribute( 'image' )}			
+                      {include uri='design:atoms/image.tpl' href=$child_url|ezurl() target=$target item=$child image_class=squarethumb alignment=center image_css_class="img-circle"}  
+                {/if}
+                <div class="caption">
+                      <h5 class="text-center">
+                          <a href={$child_url|ezurl()} target="{$target}" alt="{'Read more'|i18n('ocbootstrap')} {$child.name|wash()}">
+                              {$child.name|wash()}
+                          </a>
+                      </h5>
+                </div>
+                          
+                {undef $child_url
+                       $target}
             </div>
             {if eq(sum($i,1)|mod(6),0)}
                   </div>

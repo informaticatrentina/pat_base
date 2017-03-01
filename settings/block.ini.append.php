@@ -26,7 +26,8 @@ AllowedTypes[]=SoloTesto
 AllowedTypes[]=TagCloud
 AllowedTypes[]=UpcomingEvents
 AllowedTypes[]=Video
-
+AllowedTypes[]=HTML
+ 
 [Carousel]
 Name=Carousel
 NumberOfValidItems=10
@@ -202,11 +203,20 @@ ViewName[default]=Default
 Name=Item list
 NumberOfValidItems=12
 NumberOfArchivedItems=5
-ManualAddingOfItems=enabled
 ViewList[]
 ViewList[]=default
 ViewName[default]=Default
+ManualAddingOfItems=enabled
+CustomAttributes[]=number
+CustomAttributeNames[number]=Mostra data Pubblicazione
+CustomAttributeTypes[number]=select
+CustomAttributeSelection_number[]
+CustomAttributeSelection_number[0]=SI
+CustomAttributeSelection_number[1]=NO
 
+
+  
+ 
 [FeedReader]
 Name=Feed reader
 ManualAddingOfItems=disabled
@@ -326,19 +336,27 @@ CustomAttributeNames[ordinamento]=Ordina per
 CustomAttributeNames[columns]=Numero di Colonne
 CustomAttributeNames[state_id]=Stato
 CustomAttributeNames[show_all_btn]=Mostra pulsante "Visualizza Tutti..." (SI/NO)
+
+CustomAttributeTypes[ordinamento]=select
 CustomAttributeTypes[state_id]=state_select
+CustomAttributeSelection_ordinamento[]
+CustomAttributeSelection_ordinamento[name]=Titolo
+CustomAttributeSelection_ordinamento[published]=Data di pubblicazione
+CustomAttributeSelection_ordinamento[modified]=Data di ultima modifica
+CustomAttributeSelection_ordinamento[priority]=Priorità del nodo
+
 ManualAddingOfItems=disabled
+ *
 ViewList[]
 ViewList[]=lista_num
-ViewList[]=lista_accordion
+ViewList[]=lista_num_responsive
 #ViewList[]=lista_box
 ViewList[]=lista_carousel
 ViewList[]=lista_evidenza
 ViewName[]
 ViewName[lista_num]=Pannelli (carousel)
-ViewName[lista_accordion]=Pannelli (TODO)
-#ViewName[lista_box]=Elenco
-ViewName[lista_carousel]=Banner (carousel) (TODO)
+ViewName[lista_num_responsive]=Panelli con foto responsiva (carousel)
+ViewName[lista_carousel]=Banner (carousel)
 ViewName[lista_evidenza]=Pannelli in evidenza (carousel)
 TTL=3600
 
@@ -386,4 +404,14 @@ ViewList[]
 ViewList[]=default
 ViewName[default]=Default
 
+[HTML]
+Name=Codice HTML
+ManualAddingOfItems=disabled
+CustomAttributes[]
+CustomAttributes[]=html
+CustomAttributeTypes[html]=text
+ViewList[]
+ViewList[]=html
+ViewName[html]=html
+ 
 */ ?>

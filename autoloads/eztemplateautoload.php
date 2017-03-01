@@ -17,3 +17,7 @@ $eZTemplateOperatorArray[] = array( 'script' => 'extension/pat_base/autoloads/pa
 $eZTemplateOperatorArray[] = array( 'script' => 'extension/pat_base/autoloads/patoperators.php',
                                     'class' => 'PatOperators',
                                     'operator_names' => array( 'http_header' ) );
+// Operator: header_images
+$eZTemplateOperatorArray[] = array( 'script' => 'extension/pat_base/autoloads/patoperators.php',
+                                    'class' => 'PatOperators',
+                                    'operator_names' => array( 'header_images' ) );

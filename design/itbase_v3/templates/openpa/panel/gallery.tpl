@@ -3,7 +3,7 @@
     {if $node|has_attribute( 'image' )}  
         <a href={$node.url_alias|ezurl()} title="{$node.name|wash()}">
              {def $com_img = fetch('content','node',hash('node_id',$node.data_map.image.content.relation_list[0].node_id))}
-              {def $com_img_url = $com_img|attribute('image').content['widemedium']}
+              {def $com_img_url = $com_img|attribute('image').content['widelarge']}
 
               <figure style="background: url( {$com_img_url.url|ezroot(no)} )"></figure>
               {undef $com_img
@@ -28,7 +28,7 @@
             {set $index = $index|sum(1)}
         {/foreach}
 
-        <div class="gallery-panel">
+        <div class="gallery-panel" style="">
             <div class="row">
                 <div class="col-xs-8">
                     <h3>
@@ -44,12 +44,10 @@
                     </span>
                 </div>
             </div>
-
-            {include uri='design:atoms/gallery.tpl' items=$images}
+                        
+            {include uri='design:atoms/gallery.tpl' items=$images link_node=true() thumbnail_class=widemini pullleft="pull-left"}
         </div>
 
-        {include uri='design:parts/related-script.tpl'}
-
-        {include uri='design:parts/related-script.tpl'}
+        {include uri='design:parts/related-script.tpl' margin= 62}
     {/if}
 </div>

@@ -22,16 +22,27 @@
       </div>
   {/if}    
   {if $node|has_attribute('image')}
-      <a href="{$node.data_map.location.content}" target="_blank" title="{$node.name|wash()}">
-        <figure style="background: url( {$node|attribute('image').content.original.full_path|ezroot(no)} )"></figure>
-      </a>
+      
+      <div class="figure-border">
+        <a href="{$node.data_map.location.content}"
+            {if and( is_set( $node.data_map.open_in_new_window ), $node.data_map.open_in_new_window.data_int )}
+                        target="_blank"
+            {/if} 
+            title="{$node.name|wash()}">
+          <figure style="background: url( {$node|attribute('image').content.original.full_path|ezroot(no)} )"></figure>
+        </a>
+      </div>
   {/if}
   
   <div class="media{if $node|has_attribute('image')} has-image{/if}">   
     <div class="caption">
         <p>
           <h4 class="fw_medium color_dark">
-              <a href="{$node.data_map.location.content}" target="_blank" title="{$node.name|wash()}">
+              <a href="{$node.data_map.location.content}" 
+                    {if and( is_set( $node.data_map.open_in_new_window ), $node.data_map.open_in_new_window.data_int )}
+                        target="_blank"
+                    {/if} 
+                    title="{$node.name|wash()}">
                   {$node.name|openpa_shorten(60)|wash()}
               </a>
           </h4>

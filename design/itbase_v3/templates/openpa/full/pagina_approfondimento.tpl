@@ -51,17 +51,30 @@ $matrix_link_has_content
                 </p>
             {/if}
 
-            {if $node|has_attribute( 'published' )}
-                <span class="date">
-                    {$node|attribute( 'published' ).content.timestamp|l10n( 'date' )} 
+            <div class="row">
+                <div class="col-xs-6">
+                    {if $node|has_attribute( 'published' )}
+                    <span class="date">
+                        {$node|attribute( 'published' ).content.timestamp|l10n( 'date' )} 
 
-                    {def $OraPubblicazione = $node|attribute( 'published' ).content.timestamp|l10n( 'shorttime')}
-                    {if ne( $OraPubblicazione , '00:00')}
-                        -  {$OraPubblicazione}
-                    {/if}   
-                </span>
-            {/if}
-
+                        {def $OraPubblicazione = $node|attribute( 'published' ).content.timestamp|l10n( 'shorttime')}
+                        {if ne( $OraPubblicazione , '00:00')}
+                            -  {$OraPubblicazione}
+                        {/if}   
+                    </span>
+                    {/if}
+                </div>
+                <div class="col-xs-6 text-right">  
+                    <a href="javascript:void(0);" data-toggle="collapse" data-target="#sharebuttons">
+                    <i class="fa fa-share-alt fa-2x share"  ></i>
+                    </a>
+                    <div id="sharebuttons" class="collapse">
+                        {include uri='design:parts/social_buttons.tpl'}
+                    </div>
+                        
+                </div>
+            </div>
+                    
             <h1>
                 {if $node|has_attribute( 'occhiello' )}
                     <small style="font-weight: normal;color: #000">
@@ -125,8 +138,7 @@ $matrix_link_has_content
         {/if}
         
         <hr/>
-        {include uri='design:parts/social_buttons.tpl' node=$node}
-
+        
     </div>
 
     {if $has_sidebar}
@@ -138,12 +150,8 @@ $matrix_link_has_content
             {include uri='design:parts/related-link.tpl'}
             {include uri='design:parts/related-fonte.tpl'}
             {include uri='design:parts/related-geo.tpl'}
-            {include uri='design:parts/related-script.tpl'}
-            
-
-             {if gt($video|count,0)}                
-                <h2><i class="fa fa-youtube-play"></i> Video</h2>
-                {include uri='design:atoms/video_gallery.tpl' items=$video}
+            {if gt($video|count,0)}      
+                {include uri='design:parts/related-video.tpl'}
             {/if}
 
  

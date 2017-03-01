@@ -48,8 +48,25 @@
             z-index: 20;
             
             .social-icon{
-                padding-right: 10px;
+                //padding-right: 10px;
                 text-decoration: none;
+                
+                .social-circle{
+                    display: none;
+                    font-size: 1.4em;
+                }
+                .social-logo{
+                    color: #fff;
+                }
+            }
+            
+            .social-icon:hover{
+                .social-circle{
+                    display: block;
+                }
+                .social-logo{
+                    color: $text-color;
+                }
             }
         }
         
@@ -112,6 +129,7 @@
         div{
             // background-color: rgba(0,0,0,0.4);
             h1{
+                font-family: 'Helvetica Black', Helvetica, Arial,'sans-serif';
                 font-weight: 900;
                 font-size: 40px;
                 a{
@@ -124,9 +142,12 @@
 
 .small-devices-menu{
     button{
+        color: $gray-light;
         font-size: 1.5em; 
-        border-radius: 0px;
-        background-color: $brand-primary;
+        border-radius: 2px;
+        border-color: $gray-light;
+        border-width: 1px;
+        background-color: inherit;
     }
 }
 
@@ -169,13 +190,18 @@
             }
             
             .tob-bar-icons{
+                .top-social-icons{
+                    margin-left: 0px;
+                    width: 41.66667%;
+                    margin-top: -4px;
+                }
                 .site-logo{
                     display: none;
                 }
                 .site-logo-small{
                     display: block;
                     img{
-                        width: 100%;
+                        width: 14px;
                         height: auto;
                     }
                 }

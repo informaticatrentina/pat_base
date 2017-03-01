@@ -1,21 +1,66 @@
 .content-main{
+    //padding: 0px !important;
     .content-line{
           border-bottom: solid 4px $text-color;
-          margin: 20px 0px 20px 10px;
+          margin: 50px 0px 40px 10px;
      }
+     
+     div[class^="body-"], div[class*=" body-"]{
+         padding-right: 50px;
+         text-align: justify;
+     }
+     
      .content-main{
+         //margin-left: -20px;
          .content-title{
-            margin-top:50px;
+            margin-top:30px;
+            
+            h3{
+                margin-top:50px;
+            }
+            
+            .date{
+                color: $gray-light;
+            }
+            
+            .share{
+                color: $gray-light;
+            }
+            
+            .occhiello{
+                margin-top: 50px;
+            }
+         }
+         
+         .description{
+             margin-top:30px;
+             margin-bottom:50px;
+         }
+         
+         .embed{
+             margin: 20px;
+         }
+         
+         .fonte{
+             color: $gray-light;
+             font-size: 12px;
+         }
+         
+         .numero-comunicato{
+             color: $gray-light;
+             font-size: 12px;
          }
      }
     .content-related{
-
+        //margin-left: 20px;
+        
         .related-panel{
             padding: 0px 20px 20px 20px;
             background-color: #dedede;
             color: #808080;
             overflow:hidden;
-            margin-top: 20px;
+            margin-top: 30px;
+            margin-bottom:50px;
 
             .related-icon{
                 margin-top: -20px;
@@ -34,7 +79,7 @@
         background-color: #dedede;
         color: #808080;
         overflow:hidden;
-        margin-top: 20px;
+        margin-top: 10px;
 
         .related-icon{
             margin-top: -20px;
@@ -48,6 +93,46 @@
             color: $text-color;
         }
     }
+    
+    // --- customizzazioni su classi di contenuto ---
+    .class-pubblicazione{
+        margin-top: 40px;
+        .body-pubblicazione{
+            margin-top:20px;
+        }
+        
+        .content-line{
+            margin: 30px 0px 30px 10px;
+        }
+    }
+    
+    .body-gallery{
+        .content-title{
+            margin-bottom: 50px;
+        }
+    }
+    
+    .class-frontpage{
+        margin-top: 60px;
+    }
 }
 
+// -------- small devices
+@media only screen and (max-width: 768px){
+    .content-main{
+        div[class^="body-"], div[class*=" body-"]{
+            padding-right: 0px;
+            text-align: left;
+        }
+        
+        .content-main{
+            text-align: left;
 
+        }
+        
+        // --- customizzazioni su classi di contenuto ---
+        .class-frontpage{
+            margin-top: 0px;
+        }
+    }
+}

@@ -12,7 +12,7 @@
                     'sort_by', hash( 'published', 'desc' ),
                     'limit', $page_limit ),
                   $view_parameters )}
-        
+           
 <div class="row">
     <div class="col-md-8">
      {if and( $data.is_search_request, is_set( $view_parameters.class_id ) )}
@@ -28,17 +28,17 @@
        </p>
 
        {if $data.count}	  
-
-         <div class="content-view-children">  
-           <div class="row panels-container"> 
+            <div class="content-view-children">
+                <div class="row panels-container">
+           
            {foreach $data.contents as $child }
-             <div class="col-md-6">
+              <div class="col-md-6" id="content-related-folder">
                {node_view_gui content_node=$child view=panel image_class=widemedium}
-             </div>
-             {delimiter modulo=2}</div><div class="row panels-container">{/delimiter}
-           {/foreach}
-           </div>
-         </div>
+              </div>
+                {delimiter modulo=$modulo}</div><div class="row panels-container">{/delimiter}
+                {/foreach}
+                </div>
+            </div>
 
          {include name=navigator
                  uri='design:navigator/google.tpl'
@@ -46,6 +46,15 @@
                  item_count=$data.count
                  view_parameters=$view_parameters
                  item_limit=$page_limit}
+            {* Inclusione del js masonry per togliere gli spazi tra i div*}
+            {*literal}
+                <script>
+                   $('.content-view-children').masonry({
+                       // options
+                       itemSelector: '#content-related-folder'
+                   });
+               </script> 
+            {/literal*} 
        {else}
          <div class="warning">{"NoResult"|i18n('design/pat_base/generic')}</div>
        {/if}	

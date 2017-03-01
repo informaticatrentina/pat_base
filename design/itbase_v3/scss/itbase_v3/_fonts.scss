@@ -1,7 +1,27 @@
-// @import url(https://fonts.googleapis.com/css?family=Open+Sans);
-// @import url(https://fonts.googleapis.com/css?family=Roboto);
-//@import url(https://fonts.googleapis.com/css?family=Roboto:400,900,700italic,700,400italic,500,500italic,900italic,300italic,300,100italic,100);
+
+@font-face{
+    font-family: 'Helvetica Light';
+    src: url('#{$base-font-path}/HelveticaLt.eot');
+    src: url('#{$base-font-path}/HelveticaLt.eot?#iefix') format('embedded-opentype'),
+         url('#{$base-font-path}/HelveticaLt.woff') format('woff'),
+         url('#{$base-font-path}/HelveticaLt.ttf') format('truetype'),
+         url('#{$base-font-path}/HelveticaLt.svg#svgHelveticaLight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face{
+    font-family: 'Helvetica Black';
+    src: url('#{$base-font-path}/HelveticaBlk.eot');
+    src: url('#{$base-font-path}/HelveticaBlk.eot?#iefix') format('embedded-opentype'),
+         url('#{$base-font-path}/HelveticaBlk.woff') format('woff'),
+         url('#{$base-font-path}/HelveticaBlk.ttf')  format('truetype'),
+         url('#{$base-font-path}/HelveticaBlk.svg#svgHelveticaBlack') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
 
 body{
-    font: 300 14px/21px 'Helvetica','sans-serif';
+    font-family: 'Helvetica Light', Helvetica, Arial, 'sans-serif';
+    font-size: 15px;
 }

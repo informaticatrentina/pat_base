@@ -32,13 +32,20 @@
 												  'offset', $view_parameters.offset,
                                                   'sort_by', $parent_node.sort_array,
                                                   'limit', $page_limit )|merge( $params ) ) }
+
+
+{def $child_class_identifier = ''}
 {if $children_count}
   <div class="content-view-children">
     <div class="row panels-container">
     {foreach $children as $child }
-      <div class="col-md-{$col_width}">
-        {node_view_gui content_node=$child view=panel image_class=widemedium}
-      </div>
+        {* verifica se esiste una classe dei figli di tipo gallery *}
+        {if $child.object.class_identifier|eq( 'gallery' )}                
+            {set $child_class_identifier = $child.object.class_identifier }        
+        {/if}
+        <div class="col-md-{$col_width}" id="content-related-folder">
+            {node_view_gui content_node=$child view=panel image_class=widemedium}
+        </div>
       {delimiter modulo=$modulo}</div><div class="row panels-container">{/delimiter}
     {/foreach}
     </div>
@@ -51,4 +58,17 @@
 		   view_parameters=$view_parameters
 		   item_limit=$page_limit}
 
+{/if}
+
+{if $child_class_identifier|eq( 'gallery' )}
+    {* toglie il masonry se esiste una classe dei figli di tipo gallery *}
+{else}  
+    {*literal}
+         <script>
+            $('.content-view-children').masonry({
+                // options
+                itemSelector: '#content-related-folder'
+            });
+        </script> 
+    {/literal*} 
 {/if}

@@ -56,6 +56,12 @@
             }
         }
     }
+    
+    .calendar{
+        .event{
+            margin-top: 15px;
+        }
+    }
 }
 
 
@@ -82,10 +88,25 @@
             color: #333;
             text-decoration: none;
         }
+        a:hover{
+            color: $brand-primary;
+        }
     }
 }
 .home_widget{
     padding: 20px;
+    
+    .media-panel{
+        margin-left: 0px;
+        margin-right: 0px;
+
+        .figure-border{
+                padding: 0px;
+        }
+        .media{
+                padding: 0px;
+        }
+    }
 }
 
 /* =carousel
@@ -129,9 +150,14 @@
 -------------------------------------------------
 */
 .breadcrumb{
-    border-top: 6px solid $text-color;
+    border-top: 4px solid $text-color;
     border-radius: 0px !important;
     background-color: inherit;
+    text-transform: uppercase;
+    font-size: 10px;
+    margin-top: 40px;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 
@@ -151,7 +177,7 @@
                 padding-bottom: 10px;
                 padding-left: 18px;
                 padding-right:18px;
-                border-bottom: 1px solid $navbar-default-border;
+                border-bottom: 1px solid darken($navbar-default-bg, 10%);
                 background-color: #ddd;
                 
                 
@@ -230,18 +256,38 @@
   &.gallery-strip{
     .gallery-strip-thumbnail{
       display: inline-block;
-      margin: 0 4px 4px 0;
+      // margin: 0 2px 2px 2px;
       overflow: hidden;
       img{
         display: inline-block;
+        margin-right: 3px;
+        margin-bottom: 3px;
       }
     }
+    /*
+    .gallerythumb{
+      margin: 0 4px 2px 4px;
+    }
+    */
+    
     .content-related &{
       img{
-        width: 100px;
+        width: 106px;
         height: 80px;
       }
     }
+  }
+  .gallery-edit-pencil{
+        position: absolute;
+        padding-top: 8px;
+        padding-bottom: 8px;
+        padding-left: 10px;
+        padding-right: 10px;
+        margin-top: 2px;
+        margin-left: 70px;
+        color: white;
+        background-color: rgba(0,0,0,0.8);
+        cursor: pointer;
   }
 }
 

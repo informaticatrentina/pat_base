@@ -22,7 +22,7 @@ class ITOpenDataController extends ezpRestContentController
         $result = new ezpRestMvcResult();
         $result->variables['help'] = array(
             array(
-                'name' => 'Catalogo dei dataset disponibili recion',
+                'name' => 'Catalogo dei dataset disponibili',
                 'identifier' => 'dataset',
                 'link' => $this->request->getHostURI() . $this->getRouter()->generateUrl( 'openDataDataset' ),
                 'description' => 'Catalogo dei dataset accessibili'

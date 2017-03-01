@@ -63,7 +63,7 @@
     
       {def $draft_button_label = 'Salva bozza'
            $undo_button_label = 'Annulla'}
-      
+     
       {if eq( $object.content_class.identifier , 'comunicato')}
             {set $draft_button_label = 'Salva in bozze personali'}
           
@@ -78,9 +78,13 @@
 
       
       <div class="buttonblock">
-          <input class="btn btn-lg btn-success pull-right" type="submit" name="PublishButton" value="Salva" />
-          <input class="btn btn-lg btn-warning pull-right" type="submit" name="StoreButton" value="{$draft_button_label}" />
-          <input class="btn btn-lg btn-danger" type="submit" name="DiscardButton" value="{$undo_button_label}" />
+          {if eq( $object.content_class.identifier , 'newsletter_mail')}
+            <input class="btn btn-lg btn-success pull-right" type="submit" name="PublishButton" value="Invia Alla Newsletter" />
+          {else}
+            <input class="btn btn-lg btn-success pull-right" type="submit" name="PublishButton" value="Salva" />
+            <input class="btn btn-lg btn-warning pull-right" type="submit" name="StoreButton" value="{$draft_button_label}" />
+          {/if}
+           <input class="btn btn-lg btn-danger" type="submit" name="DiscardButton" value="{$undo_button_label}" />
           <input type="hidden" name="DiscardConfirm" value="0" />
           <input type="hidden" name="RedirectIfDiscarded" value="{if ezhttp_hasvariable( 'RedirectIfDiscarded', 'session' )}{ezhttp( 'RedirectIfDiscarded', 'session' )}{else}{$_redirect}{/if}" />
           <input type="hidden" name="RedirectURIAfterPublish" value="{$_redirect}" />

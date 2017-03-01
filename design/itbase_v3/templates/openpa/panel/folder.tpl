@@ -1,9 +1,11 @@
 <div class="media-panel card-material">
     
   {if $node|has_attribute('image')}
-      <a href="{$openpa.content_link.full_link}" title="{$node.name|wash()}">
-        <figure style="background: url( {$node|attribute('image').content.original.full_path|ezroot(no)} )"></figure>
-      </a>
+      <div class="figure-border">
+        <a href="{$openpa.content_link.full_link}" title="{$node.name|wash()}">
+          <figure style="background: url( {$node|attribute('image').content.original.full_path|ezroot(no)} )"></figure>
+        </a>
+      </div>
   {/if}
   
   <div class="media{if $node|has_attribute('image')} has-image{/if}">    

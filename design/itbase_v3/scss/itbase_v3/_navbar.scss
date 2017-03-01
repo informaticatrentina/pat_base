@@ -19,7 +19,14 @@
     #site-wide-search{
         margin-top: 5px;
     }
+    
+    .navbar-nav > li > a:active{
+        color: $navbar-default-link-onclick-color;
+        background-color: $navbar-default-link-onclick-bg;
+    }
 }
+
+
 
 .navbar-default.affix{
     
@@ -30,9 +37,11 @@
         width: auto;
     }
     
+    /*
     #site-wide-search{
         display: none;
     }
+    */
 }
 
  .navbar-nav {

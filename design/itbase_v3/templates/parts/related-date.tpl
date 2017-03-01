@@ -13,11 +13,18 @@
         </div>
 
         <small style="color: #333;">
-            da <b>{attribute_view_gui attribute=$node|attribute( 'from_time' )}</b>
+            da <b>{$node|attribute( 'from_time' ).content.timestamp|l10n(date)}</b>
             <br/>
             {if $node.data_map.to_time.has_content}
-                a <b>{attribute_view_gui attribute=$node|attribute( 'to_time' )}</b>
+                a <b>{$node|attribute( 'to_time' ).content.timestamp|l10n(date)}</b>
             {/if}
         </small>
+        {if $node|has_attribute('note_orario')}
+            <p>
+                <small style="color: #333;">
+                    {attribute_view_gui attribute=$node|attribute( 'note_orario' )}
+                </small>
+            </p>
+        {/if}
     </div>
 {/if}

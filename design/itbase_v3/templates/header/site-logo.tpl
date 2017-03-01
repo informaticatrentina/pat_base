@@ -9,27 +9,36 @@
     
     <div class="tob-bar-icons">
         <div class="row">
-            <div class ="col-xs-offset-2 col-xs-3">
+            <div class ="top-social-icons col-xs-offset-2 col-xs-3">
                 {* SOCIAL *}
                 {def $contacts = footer('footer_contacts')}
                 
                 {if is_set($contacts.facebook)}
                     <a class="social-icon" href={$contacts.facebook}>
-                        <i class="fa fa-facebook fa-inverse"></i>
+                        <span class="fa-stack">
+                            <i class="fa fa-circle fa-stack-1x fa-inverse social-circle"></i>
+                            <i class="fa fa-facebook fa-stack-1x social-logo"></i>
+                        </span>
                     </a>
                 </li>
                 {/if}
                 
                 {if is_set($contacts.twitter)}
                     <a class="social-icon" href={$contacts.twitter}>
-                        <i class="fa fa-twitter fa-inverse"></i>
+                        <span class="fa-stack">
+                            <i class="fa fa-circle fa-stack-1x fa-inverse social-circle"></i>
+                            <i class="fa fa-twitter fa-stack-1x social-logo"></i>
+                        </span>
                     </a>
                 </li>
                 {/if}
                 
                 {if is_set($contacts.youtube)}
                     <a class="social-icon" href={$contacts.youtube}>
-                        <i class="fa fa-youtube fa-inverse"></i>
+                        <span class="fa-stack">
+                            <i class="fa fa-circle fa-stack-1x fa-inverse social-circle"></i>
+                            <i class="fa fa-youtube fa-stack-1x social-logo"></i>
+                        </span>
                     </a>
                 </li>
                 {/if}

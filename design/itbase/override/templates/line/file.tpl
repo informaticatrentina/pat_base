@@ -36,5 +36,10 @@
     {if $node|has_abstract()}
         {$node|abstract()}
     {/if}
+    {if $node|has_attribute('description')}
+        <p>
+            {attribute_view_gui attribute=$node|attribute( 'description' )}
+        </p>
+    {/if}
   </div>
 </div>

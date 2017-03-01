@@ -1,13 +1,15 @@
  <div class="media-panel">
   {if $node|has_attribute( 'immagini' )}  
-      <a href={$node.url_alias|ezurl()} title="{$node.name|wash()}">
-           {def $com_img = fetch('content','node',hash('node_id',$node.data_map.immagini.content.relation_list[0].node_id))}
-            {def $com_img_url = $com_img|attribute('image').content['widemedium']}
-            
-            <figure style="background: url( {$com_img_url.url|ezroot(no)} )"></figure>
-            {undef $com_img
-                   $com_img_url}
-      </a>
+      <div class="figure-border">
+        <a href={$node.url_alias|ezurl()} title="{$node.name|wash()}">
+             {def $com_img = fetch('content','node',hash('node_id',$node.data_map.immagini.content.relation_list[0].node_id))}
+              {def $com_img_url = $com_img|attribute('image').content['widelarge']}
+
+              <figure style="background: url( {$com_img_url.url|ezroot(no)} )"></figure>
+              {undef $com_img
+                     $com_img_url}
+        </a>
+      </div>
   {/if}
   
   {def $icon = ezini( 'ClassIcons', $node.object.class_identifier, 'fa_icons.ini.append.php' )}

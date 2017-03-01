@@ -15,59 +15,60 @@
             </h1>
         </div>
     </header>
-            
+
     {if $custom_attributes.node_id|ne('')}
         {*ordine inverso in base a data di pubblicazione*}
         {*visualizza ultimi 3*}
-        
+
         {def $search=fetch( ezfind,
                             'search',
                             hash( 'subtree_array', array( $folder_node.node_id ),
                                   'sort_by', hash( 'published', 'desc' ) )
                                  )}
-                                 
+
         {def $_index=0}
-        {foreach $search['SearchResult'] as $node}
-            {if $_index|gt(2)}
-                {break}
-            {/if}
-           
-              {if or(
-                        $node.object.class_identifier|eq('event_simple'), 
-                        $node.object.class_identifier|eq('event')
-                    )} 
-                {if $can_edit}
-                <a href={$node.url_alias|ezurl}>
-                {else}
-                {*<a href={$folder_node.url_alias|ezurl}>*}
-                <a href={$node.url_alias|ezurl}>
+        <div class="calendar">
+            {foreach $search['SearchResult'] as $node}
+                {if $_index|gt(2)}
+                    {break}
                 {/if}
-                    <div style="padding-bottom: 10px;" class="row">
-                        <div class="col-xs-3 col-sm-3">
-                            <div class="event-day text-center">
-                                {$node.data_map.from_time.content.day}
-                            </div>
 
-                            <div class="event-month text-center">
-                                {$node.data_map.from_time.content.timestamp|datetime( 'custom', '%F' )}
-                            </div>
+                  {if or(
+                            $node.object.class_identifier|eq('event_simple'), 
+                            $node.object.class_identifier|eq('event')
+                        )} 
+                    {if $can_edit}
+                    <a href={$node.url_alias|ezurl}>
+                    {else}
+                    {*<a href={$folder_node.url_alias|ezurl}>*}
+                    <a href={$node.url_alias|ezurl}>
+                    {/if}
+                        <div style="padding-bottom: 10px;" class="row">
+                            <div class="col-xs-3 col-sm-3">
+                                <div class="event-day text-center">
+                                    {$node.data_map.from_time.content.day}
+                                </div>
 
+                                <div class="event-month text-center">
+                                    {$node.data_map.from_time.content.timestamp|datetime( 'custom', '%F' )}
+                                </div>
+
+                            </div>
+                            <div class="col-xs-9 col-sm-9 event">                            
+                                <strong>{$node.data_map.titolo.content}</strong><br/>
+                                <span class="text-small">{$node.data_map.short_title.content}</span>
+                            </div>
                         </div>
-                        <div class="col-xs-9 col-sm-9">                            
-                            <strong>{$node.data_map.titolo.content}</strong><br/>
-                            <span class="text-small">{$node.data_map.short_title.content}</span>
-                        </div>
-                    </div>
-                    {set $_index = $_index|sum(1)}
-                </a>
-            {/if}
-        {/foreach}
-        
+                        {set $_index = $_index|sum(1)}
+                    </a>
+                {/if}
+            {/foreach}
+        </div>
+
         {undef $folder_node 
                $search
                $_index}
     {/if}
-    
 </div>
         
 {undef $can_edit

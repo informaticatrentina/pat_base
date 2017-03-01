@@ -17,9 +17,12 @@
 
 <div class="media-panel video">
   {if $node|has_attribute( 'image' )}
-      <a href="{$openpa.content_link.full_link}" title="{$node.name|wash()}">
-        <figure style="background: url( {$node.data_map.image.content.video_play.full_path|ezroot(no)} )"></figure>
-      </a>
+      
+      <div class="figure-border">
+        <a href="{$openpa.content_link.full_link}" title="{$node.name|wash()}">
+          <figure style="background: url( {$node.data_map.image.content.video_play.full_path|ezroot(no)} )"></figure>
+        </a>
+      </div>
   {/if}
   
   {def $icon = ezini( 'ClassIcons', $node.object.class_identifier, 'fa_icons.ini.append.php' )}
@@ -27,7 +30,14 @@
   <div class="media{if $node|has_attribute('image')} has-image{/if}">    
     <div class="caption">
         <p>
-            <small class="media-panel-date">{$node.object.published|l10n('date')}</small>
+            <small class="media-panel-date">
+                {if $node|has_attribute( 'data' )}
+                    {def $dataPublicazione = $node|attribute( 'data' )}
+                    {$dataPublicazione.content.timestamp|l10n(date)}
+                {else}
+                    {$node.object.published|l10n('date')}
+                {/if}
+            </small>
         </p>
         <p>
             <h4 class="fw_medium color_dark">
@@ -44,7 +54,7 @@
         </div>
         
         <p class="abstract">
-            {$node|abstract()|openpa_shorten(200)}
+            {$node|abstract()|openpa_shorten(100)}
         </p>
          {* tematica
         <p style="text-transform: uppercase;">

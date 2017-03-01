@@ -3,4 +3,10 @@
 [ObjectRelationsMultiupload]
 ClassAttributeIdentifiers[]=frontpage
 
+[ObjectRelationsMultiuploadFileTypes_Image]
+Identifiers[]=frontpage
+
+[ObjectRelationsMultiuploadFileTypesGroups]
+File=/(\.|\/)(odt|rtf|pdf|doc?x|zip)$/i
+
 */ ?>

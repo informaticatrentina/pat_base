@@ -1,6 +1,6 @@
 {* Footer con Grafica richiesta da PAT *}
 
-<footer>
+<footer id="footer">
     <div class="container">
         <div class="row">
             
@@ -19,10 +19,10 @@
                     </div>
                     <div class="col-sm-6">
                         <div class="row text-center">
-                            <div class="col-xs-6 text-center">
+                            <div class="col-xs-offset-4 col-xs-4 text-center">
                                 {include uri='design:footer/rss_skype.tpl'}
                             </div>
-                            <div class="col-xs-6 text-center">
+                            <div class="col-xs-4 text-center">
                                 {include uri='design:footer/social.tpl'}
                             </div>
                         </div>

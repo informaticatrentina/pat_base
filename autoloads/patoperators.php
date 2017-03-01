@@ -1,12 +1,25 @@
 <?php
-
+/**
+ * Classe per l'operatore di template
+ * 
+ * @author Ziller Anesin
+ */
 class PatOperators
 {
-
-    function PatOperators()
-    {
-        $this->Operators= array( 'class_attributes', 'organigramma' );
+    public $Operators;
+    
+    /** 
+     * Nome dell'operatore
+     * 
+     * @param string $name
+     */
+    public function PatOperators( ){
+        $this->Operators = array( 'class_attributes',
+                                  'organigramma',
+                                  'http_header',
+                                   'header_images' );
     }
+    
 
     function operatorList()
     {
@@ -28,19 +41,22 @@ class PatOperators
                                     'node_id' =>  array( 'type' => 'int',
                                                          'required' => true,
                                                          'default' => '2' )                
-                                    ),
+            ),
             'http_header' => array('header' => array('type' => 'string',
                                                      'required' => true ),
                                    'status_code' => array('type' => 'int',
                                                             'required' => false,
                                                             'default' => 0 )
-                                  )
+            ),
+            'header_images' => array('node_id' => array('type' => 'int',
+                                                        'required' => true,
+                                                        'default' => '2' ) 
+            )
         );
     }
     
     function modify( &$tpl, &$operatorName, &$operatorParameters, &$rootNamespace, &$currentNamespace, &$operatorValue, &$namedParameters )
     {
-		
         switch ( $operatorName )
         {
             case 'class_attributes':
@@ -72,6 +88,12 @@ class PatOperators
                     $operatorValue = '';
                 }
                 break;
+            case 'header_images':
+            {
+                $nodeID = $namedParameters['node_id'];
+                $operatorValue = PatHeader::getHeaderImages($nodeID);
+            }
+            break;
 
         }
     }

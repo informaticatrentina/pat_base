@@ -1,5 +1,12 @@
+{set_defaults( hash(  
+  'read_button', false()
+))}
 
 <div class="text-left" style="padding-bottom: 5px; ">
+    {if $read_button}
+        <a href={$node.url_alias|ezurl()} class="panel-button">{$read_button}</a>
+    {/if}
+    
         {* icone che indicano solo quali contentuti (side) sono presenti *}
             {* immagini *}     
             {def $hasImages = 0}            
@@ -16,7 +23,7 @@
             {* audio *} 
             {if $node|has_attribute( 'audio' )}<i class="fa fa-volume-up " style="padding-right:5px"></i>{/if}
             {if or($node|has_attribute( 'telefono' ), $node|has_attribute( 'email' ))} <i class="fa fa-thumb-tack" style="padding-right:5px"></i>{/if}
-            {if $node|has_attribute( 'fonte' )} <i class="fa fa-code-fork" style="padding-right:5px"></i>{/if}
+            {*if $node|has_attribute( 'fonte' )} <i class="fa fa-code-fork" style="padding-right:5px"></i>{/if*}
             {if $node|has_attribute( 'geo' )} <i class="fa fa-map-marker" style="padding-right:5px"></i>{/if}
             {* link *} 
             {def $hasLink = 0}

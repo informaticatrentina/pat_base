@@ -3,7 +3,16 @@
 -------------------------------------------------
 */
 .media-panel{
-    margin-bottom: 10px;
+    margin-bottom: 30px;
+    
+    margin-left: 10px;
+    margin-right: 10px;
+    
+    .figure-border{
+        background-color: #fff;
+        padding: 15px 15px 0px 15px;
+    }
+    
     figure {
       background-repeat: no-repeat !important;
       background-size: cover !important;
@@ -19,7 +28,7 @@
     .media{
       @extend .widget;
       background:#fff;
-      padding: 10px;
+      padding: 15px;
       &.has-image {
         margin-top: 0;
         border-top-right-radius: 0;
@@ -27,6 +36,7 @@
       }
       h4{
         margin-top: 0;
+        font-weight: bold !important;
         a{
           text-decoration: none;
         }
@@ -47,7 +57,7 @@
       }
     }
     .carousel-caption {
-        padding: 0px 5px 15px 5px !important;
+        padding: 0px 5px 35px 5px !important;
         h4 {
           background-color: rgba(0, 0, 0, 0.7);
           display: inline-block;
@@ -65,11 +75,22 @@
     }
     
     .gallery-panel{
-        padding: 0px 20px 20px 20px;
+        padding: 0px 12px 20px 12px;
         background-color: #dedede;
         color: #808080;
         overflow:hidden;
         margin-top: 20px;
+        min-height: 192px;
+        
+        h3{
+            a{
+                color:#808080;
+                text-decoration: none;
+            }
+            a:hover{
+                color: $brand-primary;
+            }
+        }
 
         .related-icon{
             margin-top: -20px;
@@ -78,6 +99,49 @@
             .fa-inverse{
                 color: $body-bg;
             }
+        }
+    }
+    
+    .panel-button{
+        @extend .btn;
+        @extend .btn-xs;
+        
+        background-color: $text-color;
+        color: #fff;
+        font-size: 9px;
+        padding: 2px 5px;
+        margin-top: -7px;
+        text-transform: uppercase;
+        line-height: 1.2em;
+        letter-spacing: 1px;
+    }
+    .panel-button:hover{
+        background-color: $brand-primary;
+        color: #fff;
+    }
+    
+    .fa-download{
+        color: $gray-light;
+    }
+}
+
+// -------- wide desktop
+@media only screen and (max-width: $screen-lg){
+    
+    .media-panel{
+        .gallery-panel{
+            min-height: 249px;
+        }
+    }
+}
+
+
+// -------- desktop
+@media only screen and (max-width: $screen-md){
+    
+    .media-panel{
+        .gallery-panel{
+            min-height: auto;
         }
     }
 }

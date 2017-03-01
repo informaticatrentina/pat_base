@@ -32,6 +32,7 @@
 {include uri='design:page_head_script.tpl'}
 {include uri='design:page_head_analytics_script.tpl'}
 
+{include uri='design:page_favicon.tpl'}
 <style>
     {literal}
     .TestoRosso{
@@ -97,4 +98,6 @@
 {* This comment will be replaced with actual debug report (if debug is on). *}
 <!--DEBUG_REPORT-->
 </body>
+
+<!-- @developers: Stefano Ziller, Patrizio Anesin -->
 </html>

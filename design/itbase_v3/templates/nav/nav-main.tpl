@@ -11,7 +11,7 @@
 
 {if $top_menu}
     {def $root_node = fetch( 'content', 'node', hash( 'node_id', $pagedata.root_node ) )}
-    <div id="myNav" class="navbar-default container" >
+    <div id="myNav" class="navbar-default" >
         <div class="container">
             <div class="row">
               <div class="col-md-10">
@@ -27,7 +27,7 @@
                   <ul class="nav navbar-nav" style="text-transform: uppercase">
                       <li id="node_id_2" class="nav-home-li" >
                           <a href={"/"|ezurl}>
-                              <i class="fa fa-home fa-2x"></i>
+                              <i class="fa fa-home fa-1x"></i>
                           </a>
                       </li>
                     {foreach $top_menu_items as $key => $item}

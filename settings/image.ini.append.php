@@ -6,6 +6,8 @@ AliasList[]=carousel_top
 AliasList[]=banner_top
 AliasList[]=pubblicazione
 AliasList[]=relatedthumb
+AliasList[]=gallerythumb
+AliasList[]=widelarge
 
 [carousel_tall]
 Reference=original
@@ -28,5 +30,16 @@ Filters[]=geometry/scaleheightdownonly=300
 [relatedthumb]
 Reference=original
 Filters[]=geometry/scalewidthdownonly=200
-Filters[]=centerimg=100; 80
+Filters[]=centerimg=106; 80
+
+[gallerythumb]
+Reference=original
+Filters[]=geometry/scalewidthdownonly=240
+Filters[]=centerimg=140; 100
+ 
+[widelarge]
+Reference=original
+Filters[]=geometry/scaleheight=500
+Filters[]=geometry/forcecenter=#ffffff; 800; 500
+ 
 */ ?>

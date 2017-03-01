@@ -1,7 +1,10 @@
 <div class="media-panel">
-  {if $node|has_attribute( 'image' )}  
-       <figure style="background: url( {$node|attribute('image').content.original.full_path|ezroot(no)} )"></figure> 
-  {/if}
+    
+    <div class="figure-border">
+        {if $node|has_attribute( 'image' )}  
+             <figure style="background: url( {$node|attribute('image').content.original.full_path|ezroot(no)} )"></figure> 
+        {/if}
+    </div>
          
   {def $icon = ezini( 'ClassIcons', $node.object.class_identifier, 'fa_icons.ini.append.php' )}
 
