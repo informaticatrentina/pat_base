@@ -7,10 +7,11 @@
      
      div[class^="body-"], div[class*=" body-"]{
          padding-right: 50px;
-         text-align: justify;
      }
      
      .content-main{
+         text-align: justify;
+         
          //margin-left: -20px;
          .content-title{
             margin-top:30px;
@@ -121,8 +122,7 @@
 @media only screen and (max-width: 768px){
     .content-main{
         div[class^="body-"], div[class*=" body-"]{
-            padding-right: 0px;
-            text-align: left;
+            padding-right: 50px;
         }
         
         .content-main{

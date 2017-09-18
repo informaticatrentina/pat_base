@@ -1,4 +1,4 @@
- <div class="media-panel">
+<div class="media-panel">
   {if $node|has_attribute( 'immagini' )}  
       <div class="figure-border">
         <a href={$node.url_alias|ezurl()} title="{$node.name|wash()}">
@@ -17,7 +17,9 @@
   <div class="media{if $node|has_attribute('immagini')} has-image{/if}">    
     <div class="caption">
         <p>
-            <small class="media-panel-date">{$node.object.published|l10n('date')}</small>
+            <small class="media-panel-date">
+                {include uri='design:parts/panel_node_date.tpl'}
+            </small>
         </p>
         <p>
             <h4 class="fw_medium color_dark">

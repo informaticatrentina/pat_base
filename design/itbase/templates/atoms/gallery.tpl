@@ -15,9 +15,11 @@
 {def $caption=''}    
 {def $credits=''}
 {def $titolo =''}
-<div class="gallery gallery-{$mode}" id="galleryBlueimp{$node_id}">
-  
-  {foreach $items as $item}
+<div class="{if $can_edit}row {/if} gallery gallery-{$mode}" id="galleryBlueimp{$node_id}">
+
+    {foreach $items as $item}
+      
+    {if $can_edit}<div class="col-xs-6"> {/if}
     {set $caption=''}    
     {set $credits=''}
     {set $titolo = $item.name|wash()} 
@@ -54,7 +56,8 @@
         {attribute_view_gui attribute=$item|attribute('image') image_class=$thumbnail_class fluid=$fluid}
     </a>
     
-  
+    {if $can_edit}</div> {/if}
+    
     {/foreach}
 </div>
 {undef $caption}

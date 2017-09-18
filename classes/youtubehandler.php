@@ -22,7 +22,7 @@ class youtubehandler implements OCCustomEmbedHandlerInterface {
     public static function callback($matches, $url, $args) {
         $oembed = new OCoEmbed;
         $result = $oembed->get_html( $url, $args );   
-        
+       
         return str_replace("feature=oembed", "feature=oembed&rel=0", $result);
     }
 

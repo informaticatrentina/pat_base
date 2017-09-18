@@ -42,7 +42,7 @@
             {if and(is_set($childs_limit), $childs_limit|ne(''))}
                 <div class='text-right' style="margin-top: 5px;">
                     <a class="btn btn-sm btn-primary" href="{$openpa.content_link.full_link}" title="{$node.name|wash()}">
-                        Visualizza tutti...
+                        {'Show all'|i18n('design/pat_base/generic')}...
                     </a>
                 </div>
             {/if}

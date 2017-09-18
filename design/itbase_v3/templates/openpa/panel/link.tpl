@@ -35,7 +35,7 @@
   {/if}
   
   <div class="media{if $node|has_attribute('image')} has-image{/if}">   
-    <div class="caption">
+    <div class="caption{if $bg_color_is_set} px-2 {/if}" >
         <p>
           <h4 class="fw_medium color_dark">
               <a href="{$node.data_map.location.content}" 

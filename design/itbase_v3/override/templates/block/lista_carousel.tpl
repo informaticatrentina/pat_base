@@ -1,11 +1,16 @@
 {def $openpa= object_handler($block)}
 {set_defaults(hash('show_title', true()))}
+{def $bg_color_is_set = false()} 
+{if $block.custom_attributes.bg_color|count_chars()|gt(3)} 
+   {set $bg_color_is_set = true()}
+{/if}
 
-
-<div class="widget home_widget card-material lista_carousel">
+<div class="widget home_widget card-material lista_carousel"{if is_set($block.custom_attributes.bg_color)}
+    style="background-color:{$block.custom_attributes.bg_color} !important"
+{/if}>
 {if and( $show_title, $block.name|ne('') )}
     <header>
-        <div class="widget_title">
+          <div class="widget_title" {if is_set($block.custom_attributes.bg_color)} style="background-color:{$block.custom_attributes.bg_color} !important" {/if}>
             <h1>
                 <a href={$openpa.root_node.url_alias|ezurl()}>{$block.name|wash()}</a>
             </h1>

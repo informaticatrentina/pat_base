@@ -30,7 +30,7 @@
          {if and(is_set($block.custom_attributes.show_all_btn), $block.custom_attributes.show_all_btn|eq('SI'))}
             <div class="text-right">
                {if $openpa.root_node}<a class="btn btn-sm btn-primary" href={$openpa.root_node.url_alias|ezurl()}>{/if}
-                  Visualizza tutti...
+                  {'Show all'|i18n('design/pat_base/generic')}...
                {if $openpa.root_node}</a>{/if}
             </div>
          {/if}

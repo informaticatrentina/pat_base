@@ -28,9 +28,16 @@ $ViewList['forceSiteColor'] = array(
     'unordered_params' => array()
 ); 
 
+$ViewList['imalive'] = array( 
+    'script' => 'imalive.php',
+    'params' => array(),
+    'unordered_params' => array()
+); 
+
 
 
 $FunctionList = array();
 $FunctionList['newsletter'] = array();
 $FunctionList['header_image'] = array();
 $FunctionList['forceSiteColor'] = array();
+$FunctionList['imalive'] = array();

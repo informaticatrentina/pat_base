@@ -1,5 +1,5 @@
 {def $contacts = footer('footer_contacts')}
-
+aaa
 <ul class="social_widgets d_xs_none">
     <!--facebook-->
     {if is_set($contacts.facebook)}

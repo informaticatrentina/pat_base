@@ -87,7 +87,6 @@
             
             $heightDiv = $('#image_id{/literal}{$item.main_node_id|wash()}{literal}').height();             
             $heightLink = $('#ext_url{/literal}{$item.main_node_id|wash()}{literal}').height();     
-            
             $('#ext_url{/literal}{$item.main_node_id|wash()}{literal}').css( "margin-top", ($heightDiv/2)-(18) );
 
         });

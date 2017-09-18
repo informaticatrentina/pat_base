@@ -113,7 +113,8 @@
         
         .site-user-menu{
             position: absolute;
-            right: 10%;
+            padding-top: 5px!important;
+            right: 0;
             ul{
                 border-radius: 0px;
             }
@@ -216,6 +217,11 @@
                         display: none;
                     }
                 }
+            }
+            
+            .site-user-menu{
+                top: 6%;
+                background-color: rgba(0,0,0,0.7);
             }
         }
         .site-title{

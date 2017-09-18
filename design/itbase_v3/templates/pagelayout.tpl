@@ -2,7 +2,13 @@
 <!--[if lt IE 9 ]><html xmlns="http://www.w3.org/1999/xhtml" class="unsupported-ie ie" lang="{$site.http_equiv.Content-language|wash}"><![endif]-->
 <!--[if IE 9 ]><html xmlns="http://www.w3.org/1999/xhtml" class="ie ie9" lang="{$site.http_equiv.Content-language|wash}"><![endif]-->
 <!--[if (gt IE 9)|!(IE)]><!--><html xmlns="http://www.w3.org/1999/xhtml" lang="{$site.http_equiv.Content-language|wash}"><!--<![endif]-->
+
+{http_header('X-UA-Compatible: IE=Edge')}
+    
 <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    
+    
 {def $basket_is_empty   = cond( $current_user.is_logged_in, fetch( shop, basket ).is_empty, 1 )
      $user_hash         = concat( $current_user.login, ',', $current_user.role_id_list|implode( ',' ), ',', $current_user.limited_assignment_value_list|implode( ',' ) )}
 
@@ -23,7 +29,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- Site: {ezsys( 'hostname' )} -->
-  {if ezsys( 'hostname' )|contains( 'opencontent' )}
+  {if ezsys( 'hostname' )|begins_with( 'ez' )}
     <META name="robots" content="NOINDEX,NOFOLLOW" />
   {/if}
 

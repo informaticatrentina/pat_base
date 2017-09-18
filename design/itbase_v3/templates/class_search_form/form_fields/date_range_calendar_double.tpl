@@ -1,9 +1,10 @@
- 
+ {def $tmplabel = $label}
+{set $tmplabel= $tmplabel|explode(' ')|implode('')|downcase()}
  
  <div class="form-group">
     <label for="{$id}">{$label}</label>
     <input type="text" 
-           name="daterange" 
+           name="daterange{$tmplabel}" 
            value=""
            class="form-control date-picker" />
     
@@ -15,7 +16,7 @@
 
 <script type="text/javascript">
     $(function(){ldelim}
-            $('input[name="daterange"]').daterangepicker({ldelim}
+            $('input[name="daterange{$tmplabel}"]').daterangepicker({ldelim}
              "locale": {ldelim}
                 "format": "DD/MM/YYYY",
                 "separator": " - ",
@@ -45,11 +46,11 @@
         {rdelim});
         
         
-        $('input[name="daterange"]').on('apply.daterangepicker', function(ev, picker) {ldelim}
+        $('input[name="daterange{$tmplabel}"]').on('apply.daterangepicker', function(ev, picker) {ldelim}
             $(this).val(picker.startDate.format('DD/MM/YYYY') + ' - ' + picker.endDate.format('DD/MM/YYYY'));
         {rdelim});
 
-        $('input[name="daterange"]').on('cancel.daterangepicker', function(ev, picker) {ldelim}
+        $('input[name="daterange{$tmplabel}"]').on('cancel.daterangepicker', function(ev, picker) {ldelim}
             $(this).val('');
         {rdelim}); 
         

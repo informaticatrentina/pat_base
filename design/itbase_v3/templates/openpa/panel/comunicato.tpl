@@ -21,9 +21,11 @@
   {def $icon = ezini( 'ClassIcons', $node.object.class_identifier, 'fa_icons.ini.append.php' )}
 
   <div class="media{if $node|has_attribute('immagini')} has-image{/if}">    
-    <div class="caption">
+     <div class="caption{if $bg_color_is_set} px-2 {/if}" >
         <p>
-            <small class="media-panel-date">{$node|attribute( 'published' ).content.timestamp|l10n( 'date' )}</small>
+            <small class="media-panel-date">
+                {include uri='design:parts/panel_node_date.tpl'}
+            </small>
         </p>
         <p>
             <h4 class="fw_medium color_dark">

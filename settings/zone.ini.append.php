@@ -12,6 +12,7 @@ AllowedTypes[]=3ZonesLayout3
 AllowedTypes[]=4ZonesLayout1
 AllowedTypes[]=4ZonesLayout2
 AllowedTypes[]=4ZonesLayout3
+AllowedTypes[]=4ZonesLayout4
 AllowedTypes[]=5ZonesLayout1
 AllowedTypes[]=1ZonesLayoutFolder
 
@@ -231,6 +232,30 @@ ZoneName[centra_middle]=Zona centrale a destra
 ZoneName[bottom]=Zona inferiore
 ZoneThumbnail=4ZonesLayout3.jpg
 Template=4zoneslayout3.tpl
+AvailableForClasses[]
+AvailableForClasses[]=frontpage
+AvailableForClasses[]=area_tematica
+AvailableForClasses[]=progetto
+AvailableForClasses[]=homepage
+AvailableForClasses[]=homepage_interna
+AvailableForClasses[]=subsite
+AvailableForClasses[]=albotelematicotrentino
+AvailableForClasses[]=landing_page
+
+[4ZonesLayout4]
+ZoneTypeName=4 zone (tipo 4)
+Zones[]
+Zones[]=top_left
+Zones[]=top_right
+Zones[]=bottom_left
+Zones[]=bottom_right
+ZoneName[]
+ZoneName[top_left]=Zona superiore a sinistra
+ZoneName[top_right]=Zona superiore a destra
+ZoneName[bottom_left]=Zona inferiore a sinistra
+ZoneName[bottom_right]=Zona inferiore a destra
+ZoneThumbnail=4Zones_layout4.gif
+Template=4zoneslayout4.tpl
 AvailableForClasses[]
 AvailableForClasses[]=frontpage
 AvailableForClasses[]=area_tematica

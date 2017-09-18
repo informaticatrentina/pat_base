@@ -7,7 +7,7 @@
   <div class="media-body">
     <h3 class="media-heading">
 	  <a href={$node.url_alias|ezurl}>
-		<span class="fa fa-file-text-o"></span>
+		{*<span class="fa fa-file-text-o"></span>*}
                 {$node.name|wash()}
           </a>
     </h3>

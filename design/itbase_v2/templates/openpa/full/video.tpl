@@ -85,7 +85,7 @@
           {if $node.object.data_map.video_url.has_content}
             <div class="video-wrapper">
               {$node.data_map.video_url.content|autoembed(array( '<div class="video-container">', '</div>' ), hash( 'width', '600' ) )}
-            </div>
+            </div>            
           {/if}
         </div>
 

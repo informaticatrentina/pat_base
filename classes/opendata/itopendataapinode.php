@@ -106,10 +106,10 @@ class ITOpenDataApiNode extends OCOpenDataApiNode {
                     
                     // Nella variabile $link imposto il link all'oggetto
                     $link = "";
-                    if( substr( $item['link'], 0, 4 ) === "http" ){
+                    if( is_array($item) && array_key_exists('link', $item) && substr( $item['link'], 0, 4 ) === "http" ){
                         $link = $item['link'];
                     }
-                    else if( substr( $item, 0, 4 ) === "http" ){
+                    else if( !is_array($item) && substr( $item, 0, 4 ) === "http" ){
                         $link = $item;
                     }
                     

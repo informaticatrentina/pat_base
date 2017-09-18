@@ -1,0 +1,18 @@
+.content-related{
+        
+    .related-panel{
+        padding: 0px 0px 20px 20px;
+        background-color: #ddd;
+        color: #999;
+        overflow:hidden;
+
+        .related-icon{
+            margin-top: -20px;
+            color: #ddd;
+            .fa-inverse{
+                color: #eee;
+            }
+        }
+    }
+}
+

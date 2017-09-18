@@ -1,7 +1,7 @@
 <?php /* #?ini charset="utf-8"?
 
 [NetworkSettings]
-PrototypeUrl=https://ez020-prod.infotn.it/openpa/classdefinition/
+PrototypeUrl=http://ez020-prod.infotn.it/openpa/classdefinition/
 
 [ExcludedClassesAsChild]
 FromFolder[]

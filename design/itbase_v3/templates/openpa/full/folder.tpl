@@ -50,7 +50,7 @@
     {/if}
     
     {if $node|has_attribute( 'show_children' )}
-      {def $children_view=$node.data_map.children_view.class_content.options[$node.data_map.children_view.value[0]].name|downcase()
+      {set $children_view=$node.data_map.children_view.class_content.options[$node.data_map.children_view.value[0]].name|downcase()
            $col_width=6
            $modulo=2}
            

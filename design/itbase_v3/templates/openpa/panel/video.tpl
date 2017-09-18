@@ -31,12 +31,7 @@
     <div class="caption">
         <p>
             <small class="media-panel-date">
-                {if $node|has_attribute( 'data' )}
-                    {def $dataPublicazione = $node|attribute( 'data' )}
-                    {$dataPublicazione.content.timestamp|l10n(date)}
-                {else}
-                    {$node.object.published|l10n('date')}
-                {/if}
+                {include uri='design:parts/panel_node_date.tpl'}
             </small>
         </p>
         <p>

@@ -45,8 +45,7 @@
 
             <p class="media-panel-date-padding-bottom">
                 <small class="media-panel-date-medium">
-                    {def $dataPublicazione = $node|attribute( 'data' )}
-                    {$dataPublicazione.content.timestamp|l10n(date)}
+                    {include uri='design:parts/panel_node_date.tpl'}
                 </small>
             </p>
 

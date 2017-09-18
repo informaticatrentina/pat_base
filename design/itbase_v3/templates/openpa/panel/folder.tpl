@@ -9,7 +9,8 @@
   {/if}
   
   <div class="media{if $node|has_attribute('image')} has-image{/if}">    
-    <div class="caption">
+    <div class="caption{if $bg_color_is_set} px-2 {/if}" >
+        
         {if and(is_set($show_childs), $show_childs|eq('yes'))|not }
           <h4 class="fw_medium color_dark">
               <a href="{$openpa.content_link.full_link}" title="{$node.name|wash()}">
@@ -44,7 +45,7 @@
             {if and(is_set($childs_limit), $childs_limit|ne(''))}
                 <div class='text-right' style="margin-top: 5px;">
                     <a class="btn btn-sm btn-primary" href="{$openpa.content_link.full_link}" title="{$node.name|wash()}">
-                        Visualizza tutti...
+                        {'Show all'|i18n('design/pat_base/generic')}...
                     </a>
                 </div>
             {/if}

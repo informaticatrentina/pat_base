@@ -84,7 +84,7 @@ $(document).ready(function() {
             "oPaginate": {
                 "sFirst":    "Primo",
                 "sPrevious": "Precedente",
-                "sNext":     "Successivo",
+                "sNext":     "{"Next"|i18n('design/pat_base/generic')}",
                 "sLast":     "Ultimo"
             }
         },

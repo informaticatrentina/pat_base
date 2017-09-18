@@ -22,11 +22,13 @@
     <div class="caption">
 
       <h4 class="fw_medium color_dark">
-          <a href="{$openpa.content_link.full_link}" title="{$node.name|wash()}">
-              {$node.name|openpa_shorten(60)|wash()}
-          </a>
-          {if $node.children_count|gt(0)}<small>{$node.children_count} video</small>{/if}
-          <small>{$node.object.published|l10n('shortdate')}</small>
+            <a href="{$openpa.content_link.full_link}" title="{$node.name|wash()}">
+                {$node.name|openpa_shorten(60)|wash()}
+            </a>
+            {if $node.children_count|gt(0)}<small>{$node.children_count} video</small>{/if}
+            <small class="media-panel-date">
+                {include uri='design:parts/panel_node_date.tpl'}
+            </small>
       </h4>
   
       <p class="abstract">

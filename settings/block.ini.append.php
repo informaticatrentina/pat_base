@@ -327,6 +327,8 @@ CustomAttributes[]=ordinamento
 CustomAttributes[]=columns
 CustomAttributes[]=state_id
 CustomAttributes[]=show_all_btn
+CustomAttributes[]=bg_color
+  
 CustomAttributeNames[]
 CustomAttributeNames[livello_profondita]=Livello di profondità nell'alberatura
 CustomAttributeNames[limite]=Numero di elementi
@@ -336,7 +338,8 @@ CustomAttributeNames[ordinamento]=Ordina per
 CustomAttributeNames[columns]=Numero di Colonne
 CustomAttributeNames[state_id]=Stato
 CustomAttributeNames[show_all_btn]=Mostra pulsante "Visualizza Tutti..." (SI/NO)
-
+CustomAttributeNames[bg_color]=Colore di sfondo (es.  #e4e4e4)
+ 
 CustomAttributeTypes[ordinamento]=select
 CustomAttributeTypes[state_id]=state_select
 CustomAttributeSelection_ordinamento[]

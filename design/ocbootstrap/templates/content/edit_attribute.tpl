@@ -3,6 +3,10 @@
          $attribute_default_category = ezini( 'ClassAttributeSettings', 'DefaultCategory', 'content.ini' )}
 
 {def $count = 0}
+{def $curDataType = ''}
+{def $curArySubFix = ''}
+{def $attributeContent = ''}
+
 {foreach $content_attributes_grouped_data_map as $attribute_group => $content_attributes_grouped}
 	{if $attribute_group|ne('hidden')}
 		{set $count = $count|inc()}
@@ -14,7 +18,7 @@
 	<ul class="nav nav-tabs">
 	{set $count = 0}
 	{foreach $content_attributes_grouped_data_map as $attribute_group => $content_attributes_grouped}
-            
+               
 		{if $attribute_group|ne('noteditable')}
 			<li class="{if $count|eq(0)} active{/if}">
 				<a data-toggle="tab" href="#attribute-group-{$attribute_group}">{$attribute_categorys[$attribute_group]}</a>
@@ -32,12 +36,13 @@
 <div class="tab-content">
 {set $count = 0}
 {foreach $content_attributes_grouped_data_map as $attribute_group => $content_attributes_grouped}
-	<div class="clearfix attribute-edit tab-pane{if $count|eq($chkNoteditableTab)} active{/if}" id="attribute-group-{$attribute_group}">
+    
+	<div class="clearfix attribute-edit tab-pane{if $count|eq(0)} active{/if}" id="attribute-group-{$attribute_group}">
             
 	{set $count = $count|inc()}
         
         {foreach $content_attributes_grouped as $attribute_identifier => $attribute}
-                
+              
             {if $attribute_group|ne('noteditable')}
 
                     {def $contentclass_attribute = $attribute.contentclass_attribute}
@@ -118,53 +123,53 @@
                     {undef $contentclass_attribute}           
             {else}
                
-                {def $curDataType = ''}
-                {def $curArySubFix = ''}
-                {def $attributeContent = ''}
+                {set $curDataType = ''}
+                {set $curArySubFix = ''}
+                {set $attributeContent = ''}
                 {switch match=$attribute.data_type_string}
                     {case match='eztext'} 
                        
-                        {def $curDataType = 'data_text'}
-                        {def $attributeid = $attribute.id}
-                        {def $attributeContent = $attribute.content|wash}
+                        {set $curDataType = 'data_text'}
+                        {set $attributeid = $attribute.id}
+                        {set $attributeContent = $attribute.content|wash}
                         <input 
                             type="hidden" 
                             name="{$attribute_base}_{$curDataType}_{$attribute.id}" 
                             value="{$attributeContent}" />
                     {/case}
                     {case match='ezinteger'}
-                        {def $curDataType = 'data_integer'}   
-                        {def $attributeContent = $attribute.content|wash}
+                        {set $curDataType = 'data_integer'}   
+                        {set $attributeContent = $attribute.content|wash}
                         <input 
                             type="hidden" 
                             name="{$attribute_base}_{$curDataType}_{$attribute.id}" 
                             value="{$attributeContent}" />
                     {/case}
                     {case match='ezstring'}
-                        {def $curDataType = 'data_text'}   
-                        {def $attributeContent = $attribute.content|wash}
+                        {set $curDataType = 'data_text'}   
+                        {set $attributeContent = $attribute.content|wash}
                          <input 
                             type="hidden" 
                             name="{$attribute_base}_{$curDataType}_{$attribute.id}" 
                             value="{$attributeContent}" />
                     {/case}
                     {case match='ezxmltext'}
-                        {def $curDataType = 'data_text'}   
-                        {def $attributeContent = $attribute.data_text|wash}
+                        {set $curDataType = 'data_text'}   
+                        {set $attributeContent = $attribute.data_text|wash}
                          <input 
                             type="hidden" 
                             name="{$attribute_base}_{$curDataType}_{$attribute.id}" 
                             value="{$attributeContent}" />
                         {/case}
                     {case match='ezurl'}
-                        {def $curDataType = 'ezurl_text'}   
-                        {def $attributeContent = $attribute.data_text|wash}
+                        {set $curDataType = 'ezurl_text'}   
+                        {set $attributeContent = $attribute.data_text|wash}
                          <input 
                             type="hidden" 
                             name="{$attribute_base}_{$curDataType}_{$attribute.id}" 
                             value="{$attributeContent}" />
-                        {def $curDataType = 'ezurl_url'}   
-                        {def $attributeContent = $attribute.content|wash( xhtml )}
+                        {set $curDataType = 'ezurl_url'}   
+                        {set $attributeContent = $attribute.content|wash( xhtml )}
                          <input 
                             type="hidden" 
                             name="{$attribute_base}_{$curDataType}_{$attribute.id}" 
@@ -172,11 +177,11 @@
                     {/case}
                     
                     {case match='ezobjectrelationlist'}
-                        {def $curArySubFix ='[]'}
-                        {def $curDataType = 'data_object_relation_list'}    
-                        {def $related_object = fetch( 'content', 'related_objects', hash( 'object_id', $attribute.contentobject_id , 'all_relations', true() ))}
+                        {set $curArySubFix ='[]'}
+                        {set $curDataType = 'data_object_relation_list'}    
+                        {set $related_object = fetch( 'content', 'related_objects', hash( 'object_id', $attribute.contentobject_id , 'all_relations', true() ))}
                         
-                        {def $attributeContent = $related_object[0].id}
+                        {set $attributeContent = $related_object[0].id}
                         <input 
                             type="hidden" 
                             name="{$attribute_base}_{$curDataType}_{$attribute.id}{$curArySubFix}" 
@@ -184,9 +189,9 @@
                         {*$related_object|attribute( 'show' )*}
                     {/case}
                     {case match='ezselection'}
-                        {def $curDataType = 'ezselect_selected_array'}                        
-                        {def $attributeContent = $attribute.content[0]|wash}
-                        {def $curArySubFix ='[]'} 
+                        {set $curDataType = 'ezselect_selected_array'}                        
+                        {set $attributeContent = $attribute.content[0]|wash}
+                        {set $curArySubFix ='[]'} 
                         <input 
                             type="hidden" 
                             name="{$attribute_base}_{$curDataType}_{$attribute.id}{$curArySubFix}" 
@@ -207,10 +212,16 @@
                             name="{$attribute_base}_date_year_{$attribute.id}{$curArySubFix}" 
                             value="{$attribute.content.year|wash}" />
                    {/case}
-                   
-                   
+                    {case match='ezboolean'}
+                        {set $curDataType = 'data_integer'}   
+                        {set $attributeContent = $attribute.content|wash}
+                        <input 
+                            type="hiddenXXX" 
+                            name="{$attribute_base}_{$curDataType}_{$attribute.id}" 
+                            value="{$attributeContent}" />
+                    {/case}
                     {case}
-                        <font color='red' >Unidentified data_type:</font>{$attribute.data_type_string}<br />
+                        <font color='red' >Unidentified data_type:</font>{$attribute.data_type_string} - Attribute name:{$attribute_identifier} <br />
                     {/case}
                 {/switch}
             {*$attribute|attribute( 'show' )*}        

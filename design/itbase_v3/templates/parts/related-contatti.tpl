@@ -11,21 +11,20 @@
                 </span>
             </div>
         </div>
+        <div  style="color: #333;">
+            {if $node|has_attribute('telefono')}
+            <p>
+                <i class="fa fa-phone"></i>
+                {attribute_view_gui attribute=$node|attribute('telefono')}
+            </p>
+            {/if}
 
-        {if $node|has_attribute('telefono')}
-            <div  style="color: #333;">
-                <p>
-                    <i class="fa fa-phone"></i>
-                    {attribute_view_gui attribute=$node|attribute('telefono')}
-                </p>
-                {/if}
-
-                {if $node|has_attribute('email')}
-                <p>
-                    <i class="fa fa-envelope"></i>
-                    {attribute_view_gui attribute=$node|attribute('email')}
-                </p>
-            </div>
-        {/if}
+            {if $node|has_attribute('email')}
+            <p>
+                <i class="fa fa-envelope"></i>
+                {attribute_view_gui attribute=$node|attribute('email')}
+            </p>
+            {/if}
+        </div>
     </div>
 {/if}

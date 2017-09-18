@@ -39,17 +39,15 @@ gt($images|count,1), $matrix_link_has_content
         <div class="content-title">
             <div class="row">
                 <div class="col-xs-6">
-                    {if $node|has_attribute( 'published' )}
-                        <span class="date">{$node|attribute( 'published' ).content.timestamp|l10n( 'date' )} </span>
-                    {/if}
+                    <span class="date">{include uri='design:parts/panel_node_date.tpl'} </span>
                 </div>
                <div class="col-xs-6 text-right">  
-                    <a href="javascript:void(0);" data-toggle="collapse" data-target="#sharebuttons">
+                    {*<a href="javascript:void(0);" data-toggle="collapse" data-target="#sharebuttons">
                     <i class="fa fa-share-alt fa-2x share"  ></i>
                     </a>
-                    <div id="sharebuttons" class="collapse">
+                    <div id="sharebuttons" class="collapse">*}
                         {include uri='design:parts/social_buttons.tpl'}
-                    </div>
+                    {*</div>*}
                         
                 </div>
             </div>

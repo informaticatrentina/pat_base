@@ -67,6 +67,10 @@
 		<source>FreeSearch</source>
 		<translation>Ricerca libera</translation>
 	</message>
+        <message>
+		<source>Show all</source>
+		<translation>Visualizza tutti</translation>
+	</message>
 </context>
 <context>
 	<name>kernel/navigationpart</name>

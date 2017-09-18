@@ -1,5 +1,7 @@
 # Require any additional compass plugins here.
-require "C:/Users/IT449/Google Drive/Informatica Trentina/_Development/PTN/trunk/extension/pat_base/design/itbase_v2/css_splitter"
+# require "C:/Users/IT449/Google Drive/Informatica Trentina/_Development/PTN/trunk/extension/pat_base/design/itbase_v2/css_splitter"
+# it537
+require "d:/Ez_Git/SVILUPPO/common_git_svilippo/repo102/extension/pat_base/design/itbase_v2/css_splitter"
 
 # Set this to the root of your project when deployed:
 http_path = "/"
@@ -25,8 +27,12 @@ output_style = :compact
 # and then run:
 # sass-convert -R --from scss --to sass sass scss && rm -rf sass && mv scss sass
 
-add_import_path "C:/Users/IT449/Google Drive/Informatica Trentina/_Development/PTN/trunk/extension/ocbootstrap/design/ocbootstrap/scss"
-add_import_path "C:/Users/IT449/Google Drive/Informatica Trentina/_Development/PTN/trunk/extension/pat_base/design/itbase/scss"
+#add_import_path "C:/Users/IT449/Google Drive/Informatica Trentina/_Development/PTN/trunk/extension/ocbootstrap/design/ocbootstrap/scss"
+#add_import_path "C:/Users/IT449/Google Drive/Informatica Trentina/_Development/PTN/trunk/extension/pat_base/design/itbase/scss"
+# it537
+add_import_path "d:/Ez_Git/community/extension/ocbootstrap/design/ocbootstrap/scss"
+add_import_path "d:/Ez_Git/SVILUPPO/common_git_svilippo/repo102/extension/pat_base/design/itbase/scss"
+
 
 on_stylesheet_saved do |path|
   CssSplitter.split(path) unless path[/\d+$/]

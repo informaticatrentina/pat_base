@@ -9,7 +9,7 @@
   {def $icon = ezini( 'ClassIcons', $node.object.class_identifier, 'fa_icons.ini.append.php' )}
 
   <div class="media{if $node|has_attribute('image')} has-image{/if}">    
-    <div class="caption">
+    <div class="caption{if $bg_color_is_set} px-2 {/if}" >
 
         <div class="row">
             <div class="col-xs-10">
@@ -17,7 +17,9 @@
                     <a href={$node.url_alias|ezurl()} title="{$node.name|wash()}">
                         {$node.name|openpa_shorten(60)|wash()}
                     </a>
-                    <small>{$node.object.published|l10n('shortdate')}</small>
+                    <small class="media-panel-date">
+                        {include uri='design:parts/panel_node_date.tpl'}
+                    </small>
                 </h4>
             </div>
             <div class="col-xs-2">

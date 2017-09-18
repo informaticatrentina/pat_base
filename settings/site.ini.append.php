@@ -9,5 +9,6 @@ ExtensionAutoloadPath[]=pat_base
 [RoleSettings]
 PolicyOmitList[]=ptn/newsletter
 PolicyOmitList[]=ptn/header_image
+PolicyOmitList[]=ptn/imalive
 
 */ ?>

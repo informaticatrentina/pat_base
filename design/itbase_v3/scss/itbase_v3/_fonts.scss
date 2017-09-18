@@ -1,27 +1,28 @@
 
 @font-face{
-    font-family: 'Helvetica Light';
-    src: url('#{$base-font-path}/HelveticaLt.eot');
-    src: url('#{$base-font-path}/HelveticaLt.eot?#iefix') format('embedded-opentype'),
-         url('#{$base-font-path}/HelveticaLt.woff') format('woff'),
-         url('#{$base-font-path}/HelveticaLt.ttf') format('truetype'),
-         url('#{$base-font-path}/HelveticaLt.svg#svgHelveticaLight') format('svg');
+    font-family: 'HelveticaLight';
+    src: url('#{$base-font-path}/HelveticaLt.eot'); /* IE9 Compat Modes */
+    src: url('#{$base-font-path}/HelveticaLt.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('#{$base-font-path}/HelveticaLt.woff2') format('woff2'), /* Super Modern Browsers */
+         url('#{$base-font-path}/HelveticaLt.woff') format('woff'), /* Pretty Modern Browsers */
+         url('#{$base-font-path}/HelveticaLt.ttf')  format('truetype'), /* Safari, Android, iOS */
+         url('#{$base-font-path}/HelveticaLt.svg#svgFontName') format('svg'); /* Legacy iOS */
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face{
-    font-family: 'Helvetica Black';
-    src: url('#{$base-font-path}/HelveticaBlk.eot');
-    src: url('#{$base-font-path}/HelveticaBlk.eot?#iefix') format('embedded-opentype'),
-         url('#{$base-font-path}/HelveticaBlk.woff') format('woff'),
-         url('#{$base-font-path}/HelveticaBlk.ttf')  format('truetype'),
-         url('#{$base-font-path}/HelveticaBlk.svg#svgHelveticaBlack') format('svg');
+    font-family: 'HelveticaBlack';
+    src: url('#{$base-font-path}/HelveticaBlk.eot'); /* IE9 Compat Modes */
+    src: url('#{$base-font-path}/HelveticaBlk.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('#{$base-font-path}/HelveticaBlk.woff2') format('woff2'), /* Super Modern Browsers */
+         url('#{$base-font-path}/HelveticaBlk.woff') format('woff'), /* Pretty Modern Browsers */
+         url('#{$base-font-path}/HelveticaBlk.ttf')  format('truetype'), /* Safari, Android, iOS */
+         url('#{$base-font-path}/HelveticaBlk.svg#svgFontName') format('svg'); /* Legacy iOS */
     font-weight: normal;
     font-style: normal;
 }
 
 body{
-    font-family: 'Helvetica Light', Helvetica, Arial, 'sans-serif';
-    font-size: 15px;
+    font-family: 'HelveticaLight', Helvetica, Arial,'sans-serif';
 }

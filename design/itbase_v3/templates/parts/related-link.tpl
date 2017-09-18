@@ -23,7 +23,7 @@
                     </span>
                 </div>
             </div>
-
+            
             {attribute_view_gui attribute=$node|attribute( $attribute_name )}
         </div>
     {/if}

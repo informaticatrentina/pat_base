@@ -4,10 +4,11 @@
             {$block.name|wash()}
         </h2>
     </header>
+        
     <div>
         
-    {$block.custom_attributes.html}
+        {$block.custom_attributes.html}
     
     </div>
-    </div>
+</div>
         

@@ -11,7 +11,7 @@ $gray:                   lighten(#000, 33.5%) !default; // #555
 $gray-light:             lighten(#000, 60%) !default;   // #999
 $gray-lighter:           #e2e6e7 !default;
 
-$brand-primary:         #9E1914 !default;
+$brand-primary:         #9E1949 !default;
 $brand-secondary:       #201f1e !default;
 $brand-success:         #5cb85c !default;
 $brand-info:            #5bc0de !default;
@@ -35,7 +35,7 @@ $text-color:            $gray-dark !default;
 //** Global textual link color.
 $link-color:            #292f38 !default;
 //$link-hover-color:      #22802d !default;
-$link-hover-color:      #9E1914 !default;
+$link-hover-color:      #9E1949 !default;
 
 //== Typography
 //
@@ -343,7 +343,7 @@ $navbar-default-border:            darken($navbar-default-bg, 6.5%) !default;
 $navbar-default-link-color:                #777 !default;
 $navbar-default-link-hover-color:          #333 !default;
 $navbar-default-link-hover-bg:             transparent !default;
-$navbar-default-link-active-color:         $navbar-default-color; // #555 !default;
+$navbar-default-link-active-color:         #555 !default;
 $navbar-default-link-active-bg:            darken($navbar-default-bg, 6.5%) !default;
 $navbar-default-link-disabled-color:       #ccc !default;
 $navbar-default-link-disabled-bg:          transparent !default;

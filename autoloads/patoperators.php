@@ -73,8 +73,7 @@ class PatOperators
             
             case 'http_header':
                 {
-                    echo 'ciao';
-                    die();
+                    
                     $header = $namedParameters['header'];
                     $status_code = $namedParameters['status_code'];
                     if ( $status_code != 0 )

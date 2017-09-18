@@ -6,7 +6,13 @@
  */
 
 $module = $Params['Module'];
+/*
+$matchFileArray = eZTemplateDesignResource::overrideArray( 'siteaccess/008admin' );
+echo '<pre>';
+print_r($matchFileArray);
 
+die();
+*/
 // Root Node ID
 $ini = eZINI::instance( 'content.ini' );
 $root_node_id = $ini->variable( 'NodeSettings', 'RootNode' );
