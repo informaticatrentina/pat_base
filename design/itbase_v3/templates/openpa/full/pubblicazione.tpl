@@ -106,10 +106,11 @@
         <div class="content-related">
             {include uri='design:parts/related-immagini.tpl'}
             {include uri='design:parts/related-allegati.tpl'}
-            {include uri='design:parts/related-link.tpl'}
-            {if $node|has_attribute( 'sfoglia_online' )}
+            {include uri='design:parts/related-link.tpl'}            
+            {if $node.object.data_map.sfoglia_online.content|count_chars()|gt}
                 {include uri='design:parts/related-sfoglia.tpl'}
             {/if}
+            
             {if $node|has_attribute( 'file' )}
                 {include uri='design:parts/related-download.tpl'}
             {/if}

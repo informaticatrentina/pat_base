@@ -88,7 +88,7 @@ $matrix_link_has_content
             
         {if $node|has_attribute( 'occupazione' )}
             <div class="description">
-                Si occupa di
+                {"Deals with"|i18n('design/pat_base/generic')}:
                 {include uri='design:parts/related-selection.tpl' attribute=$node|attribute( 'occupazione' ) separatore=','}
                
             </div>
@@ -100,7 +100,7 @@ $matrix_link_has_content
             
             <div class="row fw_medium color_dark">
                 <div class="col-xs-4">
-                    Stato
+                     {"State"|i18n('design/pat_base/generic')}
                 </div>
                  <div class="col-xs-8" style="padding-bottom: 10px" >
                     {attribute_view_gui attribute=$node|attribute('stato')}
@@ -114,7 +114,7 @@ $matrix_link_has_content
             
             <div class="row fw_medium color_dark">
                 <div class="col-xs-4">
-                    Tipologia
+                    {"Type"|i18n('design/pat_base/generic')}
                 </div>
                  <div class="col-xs-8" style="padding-bottom: 10px" >
                     {attribute_view_gui attribute=$node|attribute('tipologia')}
@@ -127,7 +127,7 @@ $matrix_link_has_content
             
             <div class="row fw_medium color_dark">
                 <div class="col-xs-4">
-                    Ambito
+                    {"Scope"|i18n('design/pat_base/generic')}
                 </div>
                  <div class="col-xs-8" style="padding-bottom: 10px" >
                     {attribute_view_gui attribute=$node|attribute('ambito')}

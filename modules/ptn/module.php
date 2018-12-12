@@ -34,6 +34,45 @@ $ViewList['imalive'] = array(
     'unordered_params' => array()
 ); 
 
+$ViewList['calendar_search'] = array(
+    'script'			=>      'calendar_search.php',
+    'params'			=> 	array('Class', 'FacetAttributes', 'ParentNodeID', 'ExportFormat'),
+    'unordered_params'		=> 	array(),
+    'single_post_actions'	=> 	array(),
+    'post_action_parameters'	=> 	array()
+);
+
+$ViewList['password_policy'] = array(
+    'script'			=>      'password_policy.php',
+    'params'			=> 	array('OldPassword', 'NewPassword', 'Login'),
+    'unordered_params'		=> 	array(),
+    'single_post_actions'	=> 	array(),
+    'post_action_parameters'	=> 	array()
+);
+
+$ViewList['password_expired'] = array(
+    'script'			=>      'password_expired.php',
+    'params'			=> 	array('UserID'),
+    'unordered_params'		=> 	array(),
+    'single_post_actions'	=> 	array(),
+    'post_action_parameters'	=> 	array()
+);
+
+$ViewList['password_updated'] = array(
+    'script'			=>      'password_updated.php',
+    'params'			=> 	array('UserID', 'Password'),
+    'unordered_params'		=> 	array(),
+    'single_post_actions'	=> 	array(),
+    'post_action_parameters'	=> 	array()
+);
+
+$ViewList['health_check'] = array(
+    'script'			=>      'health_check.php',
+    'params'			=> 	array('UserID', 'Password'),
+    'unordered_params'		=> 	array(),
+    'single_post_actions'	=> 	array(),
+    'post_action_parameters'	=> 	array()
+);
 
 
 $FunctionList = array();
@@ -41,3 +80,8 @@ $FunctionList['newsletter'] = array();
 $FunctionList['header_image'] = array();
 $FunctionList['forceSiteColor'] = array();
 $FunctionList['imalive'] = array();
+$FunctionList['calendar_search'] = array();
+$FunctionList['password_policy'] = array();
+$FunctionList['password_expired'] = array();
+$FunctionList['password_updated'] = array();
+$FunctionList['health_check'] = array();

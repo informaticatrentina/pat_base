@@ -2,7 +2,7 @@
     <div class="related-panel">
         <div class="row">
             <div class="col-xs-8">
-                <h3>date</h3>
+                <h3>{"date"|i18n('design/pat_base/generic')}</h3>                  
             </div>
             <div class="col-xs-4 text-right">
                 <span class="fa-stack fa-3x related-icon">
@@ -13,10 +13,10 @@
         </div>
 
         <small style="color: #333;">
-            da <b>{$node|attribute( 'from_time' ).content.timestamp|l10n(date)}</b>
+            {'from'|i18n('design/pat_base/generic')} <b>{$node|attribute( 'from_time' ).content.timestamp|l10n(date)}</b>
             <br/>
             {if $node.data_map.to_time.has_content}
-                a <b>{$node|attribute( 'to_time' ).content.timestamp|l10n(date)}</b>
+                {'to'|i18n('design/pat_base/generic')} <b>{$node|attribute( 'to_time' ).content.timestamp|l10n(date)}</b>
             {/if}
         </small>
         {if $node|has_attribute('note_orario')}

@@ -2,7 +2,7 @@
     <div class="related-panel">
         <div class="row">
             <div class="col-xs-8">
-                <h3>video</h3>
+                {"video"|i18n('design/pat_base/generic')} 
             </div>
             <div class="col-xs-4 text-right">
                 <span class="fa-stack fa-3x related-icon">

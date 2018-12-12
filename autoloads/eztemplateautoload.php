@@ -21,3 +21,10 @@ $eZTemplateOperatorArray[] = array( 'script' => 'extension/pat_base/autoloads/pa
 $eZTemplateOperatorArray[] = array( 'script' => 'extension/pat_base/autoloads/patoperators.php',
                                     'class' => 'PatOperators',
                                     'operator_names' => array( 'header_images' ) );
+
+// Operator:  'it_fill_contacts_matrix', 'it_contacts_matrix_fields
+$eZTemplateOperatorArray[] = array(
+    'script' => 'extension/openpa/autoloads/it_papagedata.php',
+    'class' => 'It_OpenPAPageData',
+    'operator_names' => array(  'it_fill_contacts_matrix', 'it_contacts_matrix_fields' )
+);

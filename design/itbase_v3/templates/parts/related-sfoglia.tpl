@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col-xs-8">
             <a href="{$node.object.data_map.sfoglia_online.content}" 
-            ><h3>sfoglia online</h3></a>
+            > <h3>{"browse online"|i18n('design/pat_base/generic')}</h3></a>
         </div>
         <div class="col-xs-4 text-right">
             <span class="fa-stack fa-3x related-icon">

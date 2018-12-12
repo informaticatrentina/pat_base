@@ -60,8 +60,7 @@ $matrix_link_has_content
                     {*</div>*}
                         
                 </div>
-            </div>
-
+            </div>  
             <h1>
                 {$node.name|wash()}
             </h1>
@@ -82,7 +81,7 @@ $matrix_link_has_content
             
         {if $node|has_attribute( 'occupazione' )}
             <div class="description">
-                Si occupa di
+                {"Deals with"|i18n('design/pat_base/generic')} 
                 {include uri='design:parts/related-selection.tpl' attribute=$node|attribute( 'occupazione' ) separatore=','}
                
             </div>

@@ -13,6 +13,7 @@ class PatHeader
      */
     public static function getHeaderImages($nodeID)
     {
+        
         $node = eZContentObjectTreeNode::fetch($nodeID);
         
         if( $node->ClassName === 'Landing Page'){
@@ -21,6 +22,9 @@ class PatHeader
         else if($node->NodeID === '2'){
             return false;
         }
+        else if($node->NodeID === '43'){
+            return false;
+        }         
         else{
             return self::getHeaderImages($node->ParentNodeID);
         }

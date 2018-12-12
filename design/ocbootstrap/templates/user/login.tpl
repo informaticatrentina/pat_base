@@ -56,11 +56,13 @@
                 <i class="fa fa-key"></i>
                 {'Forgot your password?'|i18n( 'design/ocbootstrap/user/login' )}
             </a>
+        {*
           <br/>
             <a href={'/user/register'|ezurl}>
                 <i class="fa fa-user"></i>
                 {'New user? Click here to register'|i18n( 'design/pat_base/user' )}
             </a>
+            *}
       </div>
       
   </div>

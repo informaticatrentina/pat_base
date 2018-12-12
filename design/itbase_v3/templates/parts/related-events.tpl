@@ -4,7 +4,7 @@
                                                                   
 {if $objects|count()|gt(0)}
     <h2 style="padding-top: 20px; padding-bottom: 5px;">
-        Prossimi eventi
+        <h3>{"events"|i18n('design/pat_base/generic')}</h3> 
     </h2>
     <div class="card-material">
         <div class="calendar">

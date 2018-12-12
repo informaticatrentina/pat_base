@@ -3,7 +3,7 @@
         <div class="col-xs-8">
             {def $file = $node|attribute( 'file' )}
             <a href={concat("content/download/",$file.contentobject_id,"/",$file.id,"/file/",$file.content.original_filename)|ezurl}>
-            <h3>scarica</h3>
+            <h3>{"download"|i18n('design/pat_base/generic')}</h3>    
             </a>
             {undef $file}
         </div>

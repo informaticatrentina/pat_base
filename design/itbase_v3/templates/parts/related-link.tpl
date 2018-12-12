@@ -14,7 +14,7 @@
         <div class="related-panel">
             <div class="row">
                 <div class="col-xs-8">
-                    <h3>link</h3>
+                    <h3>{"links"|i18n('design/pat_base/generic')}</h3>                     
                 </div>
                 <div class="col-xs-4 text-right">
                     <span class="fa-stack fa-3x related-icon">

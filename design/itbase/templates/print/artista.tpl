@@ -10,7 +10,7 @@
 
 <p>
 {if $node|has_attribute( 'occupazione' )}
-    Si occupa di:
+    {"Deals with"|i18n('design/pat_base/generic')}:
     {include uri='design:parts/related-selection.tpl' attribute=$node|attribute( 'occupazione' ) separatore=','}
 {/if}
 </p>
@@ -22,11 +22,13 @@
 <p>
 <ul>
 {if $node|has_attribute('telefono')}
-    <li>Telefono:
+    <li>    
+    {"Phone"|i18n('design/pat_base/generic')}:
     {attribute_view_gui attribute=$node|attribute('telefono')}</li>
 {/if}
 {if $node|has_attribute('mobile')}
     <li>Mobile:
+
     {attribute_view_gui attribute=$node|attribute('mobile')}</li>
 {/if}
 {if $node|has_attribute('fax')}

@@ -19,7 +19,7 @@
         <div class="searchform">
             <div class="row">
                 <div class="col-xs-8">
-                    <h3>cerca</h3>
+                    <h3>{"search"|i18n('design/pat_base/generic')}</h3>
                 </div>
                 <div class="col-xs-4 text-right">
                     <span class="fa-stack fa-3x related-icon">
@@ -39,7 +39,7 @@
             {/if}
 
             <div class="tab-content">
-              {foreach $classes as $class}
+              {foreach $classes as $class}             
               <div class="tab-pane{if $currentClass|eq( $class.id )} active{/if}" id="{$class.identifier}">
               {class_search_form( $class.identifier, hash( 'RedirectNodeID', $node.node_id ) )}
               </div>

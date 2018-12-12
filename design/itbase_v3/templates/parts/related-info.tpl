@@ -2,7 +2,7 @@
     <div class="related-panel">
         <div class="row">
             <div class="col-xs-8">
-                <h3>Informazioni</h3>
+                 <h3>{"events"|i18n('design/pat_base/generic')}</h3>                
             </div>
             <div class="col-xs-4 text-right">
                 <span class="fa-stack fa-3x related-icon">
@@ -73,7 +73,7 @@
                       <i class="fa fa-envelope"></i>
                 </div>
                  <div class="col-xs-11" style="padding-bottom: 10px" >
-                    <a href="mailto:{$node.object.data_map.email.content}">
+                    <a href="mailto:{$node.object.data_map.indirizzo_email.content}">
                         {attribute_view_gui attribute=$node|attribute('indirizzo_email')}
                     </a>
                 </div>

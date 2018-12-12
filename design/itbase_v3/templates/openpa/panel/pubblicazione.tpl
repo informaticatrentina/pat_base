@@ -51,7 +51,8 @@
 
             <p style="margin-top: 20px;">
 
-                {if $node|has_attribute( 'sfoglia_online' )}
+                {*if $node|has_attribute( 'sfoglia_online' )*}
+                {if $node.object.data_map.sfoglia_online.content|count_chars()|gt}
                     <a class="btn btn-default btn-xs_thiny" 
                         href="{$node.object.data_map.sfoglia_online.content}" 
                         target="_blank">
