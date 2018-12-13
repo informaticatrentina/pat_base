@@ -48,7 +48,7 @@ class ITUserPasswordPO extends eZPersistentObject
 
         $checkTableQuery = "SELECT 1 "
                          . "  FROM information_schema.tables "
-                         . " WHERE (table_schema = '$dbSchema' OR = table_schema = 'public') "
+                         . " WHERE (table_schema = '$dbSchema' OR table_schema = 'public') "
                          . "   AND table_name = 'ituserpassword' ";
 
         $hasTable = $db->arrayQuery( $checkTableQuery );
