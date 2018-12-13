@@ -61,7 +61,7 @@ class eZPatBaseUser extends eZUser
 
     public function __construct( $row = null )
     {
-        parent::eZUser( $row );
+        parent::__construct( $row );
     }
 
     public static function loginUser( $login, $password, $authenticationMatch = false )
